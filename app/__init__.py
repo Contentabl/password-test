@@ -23,9 +23,11 @@ db = SQLAlchemy(app)
 # create the flask login handler
 lm  = LoginManager()
 lm.init_app(app)
-lm.login_view = "TODO" "users.login"
+lm.login_view = "HEY"
 
-admin = Admin(app, name="MealsToHeal")
+# For the Admin Page
+admin = Admin(app, name="name")
+from app.admin import *
 
 assets = Environment(app)
 
@@ -38,5 +40,4 @@ from app.users.models import *
 @app.route('/', methods=['GET'])
 @app.route('/index/', methods=['GET'])
 def index():
-	print "hey"
 	return render_template('index/index.html')
