@@ -9,6 +9,8 @@ SECRET_KEY = 'rMUZgdpPkQbLMHuAGWZc'
 
 CSRF_ENABLED = True
 
+JSON_SORT_KEYS = False
+
 if 'DATABASE_URL' not in os.environ:
 	SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'app.db')
 else:
