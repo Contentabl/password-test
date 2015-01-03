@@ -97,7 +97,9 @@ def login():
 			"message" : "That password is incorrect. Please contact us if you need to reset it."
 			})
 
-
+@users.route('/auth/', methods=['GET'])
+def auth():
+	return render_template('login/login.html')
 
 @users.route('/dashboard/', methods=['POST', 'GET'])
 def dashboard():
