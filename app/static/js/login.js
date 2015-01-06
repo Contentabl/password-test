@@ -66,7 +66,7 @@ function login(){
     }
     else{
       console.log('success');
-      window.location.href = "/users/wtflink";
+      //window.location.href = "/users/wtflink";
       //window.location.replace("/users/dashboard");
     }
 });
@@ -95,7 +95,7 @@ function signup(){
          }
          else{
           console.log('success');
-          window.location.href = "/users/dashboard/";
+          //window.location.href = "/users/dashboard/";
           //window.location.replace("/users/dashboard");
          }
        });
