@@ -42,21 +42,6 @@
 
 
     </script>
-    <style>
-    #columnSunday {
-  line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;
-}
-#columnMonday{
-  width:350px;
-    float:left;
-    padding:5px;
-}
-</style>
 
     <!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -156,9 +141,35 @@
                         <span class="error-message">*This is not a valid ZIP code.</span>
                     </label>
                     <br>
-
-                    <div class="text2">Dietary Options</div>
-                    <div>
+<div class="text2">Dietary Options</div>
+                    <select>
+  <option value="Paleo"> Paleo</option>
+  <option value="Whole30"> Whole 30</option>
+  <option value="Weston"> Weston</option>
+  <option value="GAPS"> GAPS</option>
+  <option value="Primal"> Primal</option>
+  <option value="LowNo"> Low-No FODMAPs</option>
+  <option value="AutoimmunePaleo"> Autoimmune Paleo</option>
+  <option value="WahlsProtocol"> Wahls Protocol</option>
+  <option value="Ketogenic"> Ketogenic</option>
+  <option value="21DaySugarDetox"> 21 Day Sugar Detox</option>
+  <option value="GlutenFree"> Gluten-Free</option>
+  <option value="DairyFree"> Dairy Free</option>
+  <option value="AllergyFree"> Allergy-Free (Top 8)*</option>
+  <option value="Vegan"> Vegan</option>
+  <option value="Vegetarian"> Vegetarian</option>
+  <option value="DukanDiet"> Dukan Diet</option>
+  <option value="AtkinsDiet"> Atkins Diet</option>
+  <option value="SpecificCarbohydrateDiet"> Specific Carbohydrate Diet</option>
+  <option value="AlkalineDiet"> Alkaline Diet</option>
+  <option value="CleanEating"> Clean Eating</option>
+  <option value="SIBODiet"> SIBO Diet</option>
+  <option value="SlowCarb"> Slow Carb/4 Hr Body Diet</option>
+  <option value="LowGlycemic"> Low-Glycemic</option>
+  <option value="SalicylateFree"> Salicylate-Free</option>
+</select>
+<div><font size="4">* note that some people with a lot of food allergies may have other sensitivities and this will require more elaboration on the part of the customer, some customers may only be allergic to 3 or 4 major allergens, etc.</font></div><font size="4">
+<!--                     <div>
                         
                         <div style="line-height:140%"><font size="5">
                         <input type="checkbox" name="option1" value="Paleo"> Paleo<br>
@@ -191,7 +202,7 @@
                         </div>
                         
                     <p></p>
-                    </div>
+                    </div> -->
                     <div class="box">
    </div>
 
@@ -215,22 +226,22 @@
         <p style="color:black; font-style:normal; font-size:24px">How many people will be dining?</p>
         <ul class="gfield_radio" id="input_5_13" style="color:black; font-style:normal; font-size:18px;">
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="1" checked="checked" id="choice_13_0" tabindex="8">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="1" checked="checked" id="choice_13_0" tabindex="8">
                 <label for="choice_13_0" id="label_13_0">1</label></li>
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="2" id="choice_13_1" tabindex="9">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="2" id="choice_13_1" tabindex="9">
                 <label for="choice_13_1" id="label_13_1">2</label></li>
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="3" id="choice_13_2" tabindex="10">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="3" id="choice_13_2" tabindex="10">
                 <label for="choice_13_2" id="label_13_2">3</label></li>
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="4" id="choice_13_3" tabindex="11">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="4" id="choice_13_3" tabindex="11">
                 <label for="choice_13_3" id="label_13_3">4</label></li>
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="5" id="choice_13_4" tabindex="12">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="5" id="choice_13_4" tabindex="12">
                 <label for="choice_13_4" id="label_13_4">5</label></li>
             <li>
-                <input style="-webkit-appearance:radio" name="input_13" type="radio" value="6" id="choice_13_5" tabindex="13">
+                <input style="-webkit-appearance:radio" name="numPeople" type="radio" value="6" id="choice_13_5" tabindex="13">
                 <label for="choice_13_5" id="label_13_5">6</label></li>
         </ul>
         <br>
@@ -258,7 +269,7 @@
                 <label for="choice_3_5" id="label_3_5">Monday-Friday, dinner</label></li>
             <li>
                 <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Three days, dinner (delivery M)" id="choice_3_6" tabindex="20" onclick="three()">
-                <label for="choice_3_6" id="label_3_6">Three days, dinner (delivery M)</label></li>
+                <label for="choice_3_6" id="label_3_6">Three days, dinner</label></li>
             <li>
                 <input style="-webkit-appearance:radio" name="input_3" type="radio" value="None of these - I'd like to customize" id="customOptionBtn" onclick="customSelect()">
                 <label>None of these - I'd like to customize</label></li>
@@ -270,22 +281,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Monday</p>
                 <ul class="mondayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -295,22 +303,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Tuesday</p>
                 <ul class="tuesdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -320,22 +325,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Wednesday</p>
                 <ul class="wednesdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -345,22 +347,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Thursday</p>
                 <ul class="thursdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -370,22 +369,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Friday</p>
                 <ul class="fridayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -395,22 +391,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Saturday</p>
                 <ul class="saturdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -420,22 +413,19 @@
                 <p style="color:black; font-style:normal; font-size:24px">Sunday</p>
                 <ul class="sundayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
                         <label id="label_6_1">Breakfast</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dinner mealOption">
                         <label>Dinner</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Snacks mealOption">
                         <label>Snacks</label></li>
                     <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Salad">
-                        <label>Salad</label></li>
-                    <li>
-                        <input style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert">
+                        <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Dessert mealOption">
                         <label>Dessert</label></li>
                 </ul>
                 <br>
@@ -443,7 +433,13 @@
 
         </div>
 
+        <div style="text-align:center">
+            <a style="text-align:center" onclick="submitOrders();" class="btn submitOrderButton">Submit</a>
+        </div>
+
     </div>
+
+
 
     <!--==============================
                   footer
