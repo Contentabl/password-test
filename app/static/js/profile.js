@@ -5,18 +5,33 @@
 var orderButton;
 var daysList = ['mondayList', 'tuesdayList', 'wednesdayList', 'thursdayList', 'fridayList', 'saturdayList', 'sundayList'];
 var mealsList = ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Dessert'];
+var nameBox;
+var emailBox;
+var phoneBox;
+var streetBox;
+var stateBox;
+var zipBox;
+var dietOptions;
 
 $(document).ready(function(){
-    orderButton = $(".btn.orderButton");
-    orderButton.click(function(){
-        orderClicked();
-    });
+    nameBox = $(".nameBox");
+    emailBox = $(".emailBox");
+    phoneBox = $(".phoneBox");
+    streetBox = $(".streetBox");
+    stateBox = $(".stateBox");
+    zipBox = $(".zipBox");
+    var dietOptions = $(".dietOptions");
 });
 
-function orderClicked(){
+function topOrderClicked(){
+    $(".page").hide();
     $(".topLevel").show();
-
 }
+function profileClicked(){
+    $(".page").show();
+    $(".topLevel").hide();
+}
+
 function customSelect(){
     $("#customOptionBtn").prop("checked", true);
 }
@@ -103,4 +118,18 @@ function submitOrders(){
                console.log(msg)
                });
 */
+}
+function updateProfile(){
+    var address = streetBox.val() + ", " + stateBox.val() + ", " + zipBox.val();
+    $.ajax({
+        type: "POST",
+       contentType: "application/json",
+       dataType: "json",
+       url: "/users/profile/update/",
+       data: JSON.stringify({name : nameBox.val(), email : emailBox.val(), address: address, 
+        phone: phoneBox.val(), dietary_restrictions: dietOptions.find(":selected").text()})
+       }).done(function( msg ) {
+               debug = msg;
+               console.log(msg)
+               });
 }

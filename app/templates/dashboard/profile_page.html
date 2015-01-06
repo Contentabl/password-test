@@ -62,20 +62,19 @@
 =================================-->
 <div class="menu_bg"></div>
 <header>
-
+<h1 class="logo">
+    <a href="index.html"><img src="/static/images/logo.png" alt="Return Home">
+                    </a>
+                </h1>
     <div class="navigation single-page-nav">
         <div class="container_12">
             <div class="grid_12">
-                <h1 class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="">
-                    </a>
-                </h1>
                 <nav>
                     <ul>
-                        <li><a href="#">Your Profile</a></li>
+                        <li><a class="profileButton" onClick="profileClicked();" href="#">Your Profile</a></li>
                         <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
+                        <li><a class="topOrderButton" onclick="topOrderClicked();" href="#">Select Order</a></li>
                     </ul>
                 </nav>
             </div>
@@ -96,7 +95,7 @@
             <form id="contact-form">
                 <fieldset>
                     <label class="name">
-                        <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters">
+                        <input type="text" name="name" class="nameBox" placeholder="Name:" value="" data-constraints="@Required @JustLetters">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid name.</span>
                     </label>
@@ -104,7 +103,7 @@
                     <br>
                     <br>
                     <label class="email">
-                        <input type="text" name="email" placeholder="E-mail Address" value="" data-constraints="@Required @Email">
+                        <input type="text" name="email" class="emailBox" placeholder="E-mail Address" value="" data-constraints="@Required @Email">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid email.</span>
                     </label>
@@ -112,7 +111,7 @@
                     <br>
                     <br>
                     <label class="phone">
-                        <input type="text" name="phone" placeholder="Phone" value="" data-constraints="@Required @JustNumbers">
+                        <input type="text" name="phone" class="phoneBox" placeholder="Phone" value="" data-constraints="@Required @JustNumbers">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid phone.</span>
                     </label>
@@ -120,7 +119,7 @@
                     <br>
                     <br>
                     <label class="streetAddress">
-                        <input type="text" name="streetAddress" placeholder="Street Address" value="" data-constraints="@Required">
+                        <input type="text" name="streetAddress" class="streetBox" placeholder="Street Address" value="" data-constraints="@Required">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid street address.</span>
                     </label>
@@ -128,7 +127,7 @@
                     <br>
                     <br>
                     <label class="state">
-                        <input type="text" name="state" placeholder="State" value="" data-constraints="@Required @JustLetters">
+                        <input type="text" name="state" class="streetBox" placeholder="State" value="" data-constraints="@Required @JustLetters">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid state.</span>
                     </label>
@@ -136,13 +135,13 @@
                     <br>
                     <br>
                     <label class="zip">
-                        <input type="text" name="zip" placeholder="ZIP Code" value="" data-constraints="@Required">
+                        <input type="text" name="zip" class="zipBox" placeholder="ZIP Code" value="" data-constraints="@Required">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid ZIP code.</span>
                     </label>
                     <br>
 <div class="text2">Dietary Options</div>
-                    <select>
+                    <select class='dietOptions'>
   <option value="Paleo"> Paleo</option>
   <option value="Whole30"> Whole 30</option>
   <option value="Weston"> Weston</option>
@@ -216,13 +215,9 @@
         <div class="clear"></div>
     </font></div><font size="6">
 </font></section><font size="6">
-<div style="text-align:center">
-    <a style="text-align:center" onclick="orderClicked();" class="btn orderButton">Select Orders </a>
-</div>
-    <!--<input class="btn orderButton" type="button" value="Select Orders">-->
-<br>
-    <div style="margin-left:8px; text-align: center; display:none" class="topLevel">
 
+    <div style="margin-left:8px; text-align: center; display:none" class="topLevel">
+        <br>
         <p style="color:black; font-style:normal; font-size:24px">How many people will be dining?</p>
         <ul class="gfield_radio" id="input_5_13" style="color:black; font-style:normal; font-size:18px;">
             <li>
@@ -245,44 +240,46 @@
                 <label for="choice_13_5" id="label_13_5">6</label></li>
         </ul>
         <br>
-        <p style="color:black; font-style:normal; font-size:24px">Greatest Hits</p>
-        <ul class="gfield_radio" id="input_5_3" style="color:black; font-style:normal; font-size:18px;">
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="The Fridge Full of Food: Seven days, breakfast, lunch, dinner, and snacks" id="choice_3_0" tabindex="14" onclick="full()">
-                <label for="choice_3_0" id="label_3_0">
-                    The Fridge Full of Food: Seven days, breakfast, lunch, dinner, and snacks
-                </label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Seven days, three meals a day" id="choice_3_1" tabindex="15" onclick="seven()">
-                <label for="choice_3_1" id="label_3_1">Seven days, three meals a day</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, breakfast, lunch, dinner, and snacks" id="choice_3_2" tabindex="16" onclick="five()">
-                <label for="choice_3_2" id="label_3_2">Monday-Friday, breakfast, lunch, dinner, and snacks</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, breakfast, lunch, and dinner" id="choice_3_3" tabindex="17" onclick="fiveNoS()">
-                <label for="choice_3_3" id="label_3_3">Monday-Friday, breakfast, lunch, and dinner</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, lunch and dinner" id="choice_3_4" tabindex="18" onclick="fiveNoB()">
-                <label for="choice_3_4" id="label_3_4">Monday-Friday, lunch and dinner</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, dinner" id="choice_3_5" tabindex="19" onclick="fiveOnlyD()">
-                <label for="choice_3_5" id="label_3_5">Monday-Friday, dinner</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Three days, dinner (delivery M)" id="choice_3_6" tabindex="20" onclick="three()">
-                <label for="choice_3_6" id="label_3_6">Three days, dinner</label></li>
-            <li>
-                <input style="-webkit-appearance:radio" name="input_3" type="radio" value="None of these - I'd like to customize" id="customOptionBtn" onclick="customSelect()">
-                <label>None of these - I'd like to customize</label></li>
-        </ul>
+        <div class="hits">
+            <p style="color:black; font-style:normal; font-size:24px">Greatest Hits</p>
+            <ul class="gfield_radio" id="input_5_3" style="color:black; font-style:normal; font-size:18px;">
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="The Fridge Full of Food: Seven days, breakfast, lunch, dinner, and snacks" id="choice_3_0" tabindex="14" onclick="full()">
+                    <label for="choice_3_0" id="label_3_0">
+                        The Fridge Full of Food: Seven days, breakfast, lunch, dinner, and snacks
+                    </label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Seven days, three meals a day" id="choice_3_1" tabindex="15" onclick="seven()">
+                    <label for="choice_3_1" id="label_3_1">Seven days, three meals a day</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, breakfast, lunch, dinner, and snacks" id="choice_3_2" tabindex="16" onclick="five()">
+                    <label for="choice_3_2" id="label_3_2">Monday-Friday, breakfast, lunch, dinner, and snacks</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, breakfast, lunch, and dinner" id="choice_3_3" tabindex="17" onclick="fiveNoS()">
+                    <label for="choice_3_3" id="label_3_3">Monday-Friday, breakfast, lunch, and dinner</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, lunch and dinner" id="choice_3_4" tabindex="18" onclick="fiveNoB()">
+                    <label for="choice_3_4" id="label_3_4">Monday-Friday, lunch and dinner</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Monday-Friday, dinner" id="choice_3_5" tabindex="19" onclick="fiveOnlyD()">
+                    <label for="choice_3_5" id="label_3_5">Monday-Friday, dinner</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="Three days, dinner (delivery M)" id="choice_3_6" tabindex="20" onclick="three()">
+                    <label for="choice_3_6" id="label_3_6">Three days, dinner</label></li>
+                <li>
+                    <input style="-webkit-appearance:radio" name="input_3" type="radio" value="None of these - I'd like to customize" id="customOptionBtn" onclick="customSelect()">
+                    <label>None of these - I'd like to customize</label></li>
+            </ul>
+        </div>
         <br>
 
-        <div style="" class="customOrder">
-            <div class="Monday" style="float:left; overflow:hidden; width:14.3%">
+        <div style="text-align:left" class="customOrder">
+            <div class="Monday" style="float:left; overflow:hidden; width:14.3%;">
                 <p style="color:black; font-style:normal; font-size:24px">Monday</p>
                 <ul class="mondayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -304,7 +301,7 @@
                 <ul class="tuesdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -326,7 +323,7 @@
                 <ul class="wednesdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -348,7 +345,7 @@
                 <ul class="thursdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -370,7 +367,7 @@
                 <ul class="fridayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -392,7 +389,7 @@
                 <ul class="saturdayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
@@ -414,7 +411,7 @@
                 <ul class="sundayList" style="color:black; font-style:normal; font-size:18px;">
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Breakfast mealOption">
-                        <label id="label_6_1">Breakfast</label></li>
+                        <label>Breakfast</label></li>
                     <li>
                         <input onclick="customSelect();" style="-webkit-appearance:checkbox" name="" type="checkbox" class="Lunch mealOption">
                         <label>Lunch</label></li>
