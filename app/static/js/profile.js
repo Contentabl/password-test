@@ -14,13 +14,6 @@ var zipBox;
 var dietOptions;
 
 $(document).ready(function(){
-    nameBox = $(".nameBox");
-    emailBox = $(".emailBox");
-    phoneBox = $(".phoneBox");
-    streetBox = $(".streetBox");
-    stateBox = $(".stateBox");
-    zipBox = $(".zipBox");
-    var dietOptions = $(".dietOptions");
 });
 
 function topOrderClicked(){
@@ -107,6 +100,7 @@ function submitOrders(){
     }
     result['numPeople'] = new Array();
     result['numPeople'].push($('input[name=numPeople]:checked').val());
+    console.log("submit");
 /*
     type: "POST",
        contentType: "application/json",
@@ -120,6 +114,13 @@ function submitOrders(){
 */
 }
 function updateProfile(){
+    nameBox = $(".nameBox");
+    emailBox = $(".emailBox");
+    phoneBox = $(".phoneBox");
+    streetBox = $(".streetBox");
+    stateBox = $(".stateBox");
+    zipBox = $(".zipBox");
+    dietOptions = $(".dietOptions");
     var address = streetBox.val() + ", " + stateBox.val() + ", " + zipBox.val();
     $.ajax({
         type: "POST",
