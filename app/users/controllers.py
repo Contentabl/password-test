@@ -90,7 +90,7 @@ def login():
 		session['auth'] = True
 		session['user_id'] = user.id
 		return redirect("/users/dashboard/")
-	# If the password is correct
+	# If the password is not correct
 	else:
 		return jsonify({
 			"status" : 0,
@@ -104,6 +104,10 @@ def auth():
 @users.route('/dashboard/', methods=['POST', 'GET'])
 def dashboard():
 	return render_template('dashboard/profile_page.html')
+
+@users.route('/chef/', methods=['POST', 'GET'])
+def chef():
+	return render_template('dashboard/chef.html')
 
 
 @users.route('/logout/', methods=['POST', 'GET'])
