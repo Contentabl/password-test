@@ -122,13 +122,14 @@ function updateProfile(){
     zipBox = $(".zipBox");
     dietOptions = $(".dietOptions");
     var address = streetBox.val() + ", " + stateBox.val() + ", " + zipBox.val();
+    var notes = $(".notesBox").val();
     $.ajax({
         type: "POST",
        contentType: "application/json",
        dataType: "json",
        url: "/users/profile/update/",
        data: JSON.stringify({name : nameBox.val(), email : emailBox.val(), address: address, 
-        phone: phoneBox.val(), dietary_restrictions: dietOptions.find(":selected").text()})
+        phone: phoneBox.val(), dietary_restrictions: dietOptions.find(":selected").text(), notes: notes})
        }).done(function( msg ) {
                debug = msg;
                console.log(msg)

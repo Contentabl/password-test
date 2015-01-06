@@ -10,7 +10,7 @@ $(document).ready(function(){
        }).done(function( msg ) {
                debug = msg;
                data = msg['data'];
-               console.log(data);
+               //console.log(data);
                loadDay("Sunday");
                });
     $(".Week").on('change', function() {
@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 function loadDay(day){
 	var currentData = data[day];
-	console.log(currentData);
+	//console.log(currentData);
 	var meals = Object.keys(currentData);
 	var numMeals = meals.length;
 	for (var i = 0; i < numMeals; i++){

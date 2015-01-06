@@ -62,16 +62,16 @@ body {
   min-width: 1400px;
 }
 .ic {
-	border:0;
-	float:right;
-	background:#fff;
-	color:#f00;
-	width:50%;
-	line-height:10px;
-	font-size:10px;
-	margin:-220% 0 0 0;
-	overflow:hidden;
-	padding:0
+  border:0;
+  float:right;
+  background:#fff;
+  color:#f00;
+  width:50%;
+  line-height:10px;
+  font-size:10px;
+  margin:-220% 0 0 0;
+  overflow:hidden;
+  padding:0
 }
 strong {
   font-weight: 700;
@@ -268,7 +268,7 @@ header .btn {
 /*header*/
 .menu_bg {
   background-color: #000;
-  height: 100px;
+  height: 90px;
   left: 0;
   right: 0;
   top: 0;
@@ -276,14 +276,14 @@ header .btn {
   z-index: 800;
 }
 header {
-  padding-top: 253px;
+  padding-top: 95px;
   color: #e6e5e5;
   display: block;
   position: relative;
   z-index: 999;
   text-align: center;
   background: url(../images/slide.jpg) center 0 no-repeat;
-  padding-bottom: 53px;
+  padding-bottom: 33px;
 }
 header .rel {
   z-index: 999;
