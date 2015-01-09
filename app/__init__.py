@@ -25,6 +25,10 @@ lm  = LoginManager()
 lm.init_app(app)
 lm.login_view = "users.auth"
 
+# For sending emails
+from flask.ext.mail import Mail
+mail = Mail(app)
+
 # For the Admin Page
 admin = Admin(app, name="name")
 from app.admin import *

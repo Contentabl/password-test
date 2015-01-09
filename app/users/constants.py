@@ -7,11 +7,3 @@ days_array = {0:"Monday", 1:"Tuesday", 2:"Wednesday",
 
 days_array_reverse = {"Monday":0, "Tuesday":1, "Wednesday":2,
 "Thursday":3, "Friday":4, "Saturday":5, "Sunday":6}
-
-"""
-Dietary Restrictions
-"""
-dietary_restrictions_list = [
-"Vegan",
-"Vegetarian",
-]

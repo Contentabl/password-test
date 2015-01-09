@@ -32,3 +32,4 @@ class DataAdmin(ModelView):
 admin.add_view(DataAdmin(User, db.session))
 admin.add_view(DataAdmin(Week, db.session))
 admin.add_view(DataAdmin(Day, db.session))
+admin.add_view(DataAdmin(Diet, db.session))

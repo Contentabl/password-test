@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random
 import string
 from app.users.constants import *
+import datetime
 
 class User(db.Model):
 	__tablename__ = 'user'
@@ -19,6 +20,7 @@ class User(db.Model):
 
 	week = db.relationship("Week", backref = db.backref('user'), uselist=False)
 	days = db.relationship("Day", backref = db.backref('user'))
+	diets = db.relationship("Diet", backref = db.backref('user'))
 
 	def __init__(self, name=None, email=None, password=None):
 		self.name = name
@@ -55,9 +57,6 @@ class User(db.Model):
 			restrictions = json.loads(self.dietary_restrictions)
 		except:
 			restrictions = []
-		my_dict = {}
-		for restriction in dietary_restrictions_list:
-			my_dict[restriction] = (restriction in restrictions)
 
 		return {
 			'id' : self.id,
@@ -65,7 +64,7 @@ class User(db.Model):
 			'email' : self.email,
 			'address' : self.address,
 			'phone' : self.phone,
-			'dietary_restrictions' : my_dict
+			'dietary_restrictions' : restrictions
 		}
 
 class Week(db.Model):
@@ -99,6 +98,7 @@ class Day(db.Model):
 	lunch = db.Column(db.Boolean, default = False)
 	dinner = db.Column(db.Boolean, default = False)
 	snacks = db.Column(db.Boolean, default = False)
+	dessert = db.Column(db.Boolean, default = False)
 
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
@@ -109,6 +109,23 @@ class Day(db.Model):
 
 	def __repr__(self):
 		return 'Day {0} for {1}'.format(days_array[self.day_of_week], self.week.user.name)
+
+class Diet(db.Model):
+	"""
+	Dietary Restriction History Object
+	"""
+	__tablename__ = 'diet'
+	id = db.Column(db.Integer, primary_key = True)
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+	date = db.Column(db.DateTime)
+	dietary_restrictions = db.Column(db.Text)
+
+	def __init__(self, user = None):
+		self.user = user
+		self.date = datetime.datetime.now()
+
+
+
 
 
 
