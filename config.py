@@ -1,6 +1,6 @@
 import os
 from os import environ
-import secret
+
 
 _basedir = os.path.abspath(os.path.dirname(__file__))
 
