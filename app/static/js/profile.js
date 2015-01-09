@@ -86,32 +86,33 @@ function submitOrders(){
     numDays = daysList.length;
     numMeals = mealsList.length;
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    result = new Array();
+    result = {};
     for (var i = 0; i < numDays; i++){
         result[days[i]] = new Array();
         for (var j = 0; j < numMeals; j++){
             if ($('.' + daysList[i] + ' input[class="' + mealsList[j] + ' mealOption"]:checked').length > 0){
-                result[days[i]].push('true');
+                result[days[i]].push(true);
             }
             else{
-                result[days[i]].push('false');
+                result[days[i]].push(false);
             }
         }
     }
     result['numPeople'] = new Array();
     result['numPeople'].push($('input[name=numPeople]:checked').val());
     console.log("submit");
-/*
-    type: "POST",
+    console.log(result)
+    $.ajax({
+        type: "POST",
        contentType: "application/json",
        dataType: "json",
-       url: "/users/profile/update/",
-       data: JSON.stringify(result)
+       url: "/users/order/",
+       data: JSON.stringify({order: result})
        }).done(function( msg ) {
                debug = msg;
                console.log(msg)
                });
-*/
+
 }
 function updateProfile(){
     nameBox = $(".nameBox");

@@ -67,7 +67,7 @@ function login(){
     else{
       console.log('success');
       //window.location.href = "/users/wtflink";
-      //window.location.replace("/users/dashboard");
+      window.location.href = "/users/dashboard";
     }
 });
 }
@@ -86,7 +86,7 @@ function signup(){
      contentType: "application/json",
      dataType: "json",
      url: "/users/signup/",
-     data: JSON.stringify({name : 'myname', email : 'myemail', password : 'pass'})
+     data: JSON.stringify({name : name, email : email, password : pass})
    }).done(function( msg ) {
          debug = msg;
          console.log(msg)
@@ -95,7 +95,7 @@ function signup(){
          }
          else{
           console.log('success');
-          //window.location.href = "/users/dashboard/";
+          window.location.href = "/users/dashboard/";
           //window.location.replace("/users/dashboard");
          }
        });

@@ -23,7 +23,7 @@ db = SQLAlchemy(app)
 # create the flask login handler
 lm  = LoginManager()
 lm.init_app(app)
-lm.login_view = "HEY"
+lm.login_view = "users.auth"
 
 # For the Admin Page
 admin = Admin(app, name="name")

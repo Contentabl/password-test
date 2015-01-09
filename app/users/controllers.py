@@ -60,7 +60,9 @@ def signup():
 		session['user_id'] = new_user.id
 		login_user(new_user)
 
-		return redirect("/users/dashboard/")
+		return jsonify({
+			'status' : 1
+			})
 
 
 @users.route('/login/', methods=['POST'])
@@ -72,7 +74,9 @@ def login():
 	"""
 	# Redirect if they are already logged in
 	if current_user.is_authenticated():
-		return redirect('/users/dashboard/')
+		return jsonify({
+			'status' : 1
+			})
 
 	email = request.json["email"]
 	password = request.json["password"]
@@ -84,12 +88,13 @@ def login():
 			'message' : 'We did not find an account with that email'
 			})
 	# Check their password
-	print user.check_password(password)
 	if user.check_password(password):
 		login_user(user)
 		session['auth'] = True
 		session['user_id'] = user.id
-		return redirect("/users/dashboard/")
+		return jsonify({
+			'status' : 1
+			})
 	# If the password is not correct
 	else:
 		return jsonify({
@@ -101,7 +106,9 @@ def login():
 def auth():
 	return render_template('login/login.html')
 
+
 @users.route('/dashboard/', methods=['POST', 'GET'])
+@login_required
 def dashboard():
 	return render_template('dashboard/profile_page.html')
 
@@ -156,7 +163,26 @@ def update():
 		'status' : 1,
 		'message' : "Your profile was successfully updated"
 		})
-@users.route('/chefpage/')
+
+@users.route('/order/', methods = ['POST'])
+@login_required
+def order():
+	order = request.json['order']
+	for day in days_array_list:
+		day_object = Day.query.filter_by(user = current_user, day_of_week = days_array_reverse[day]).first()
+		current_order = order[day]
+		day_object.breakfast = current_order[0]
+		day_object.lunch = current_order[1]
+		day_object.dinner = current_order[2]
+		day_object.snacks = current_order[3]
+		db.session.add(day_object)
+		db.session.commit()
+
+	return jsonify({
+		'status' : 1
+		})
+
+@users.route('/chefpage/', methods = ['GET'])
 def chefpage():
 	"""
 	Returns a list of all the meals for the week 
@@ -178,7 +204,14 @@ def chefpage():
 				day_ret['Snacks'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
 		day_name = days_array[i]
 		ret[day_name] = day_ret
-		print ret
 
 	return jsonify({'data': ret})
+
+@users.route('/chefview/', methods= ['GET'])
+def chefview():
+	"""
+	Renders the chef view
+	"""
+	return render_template('dashboard/chef.html')
+
 

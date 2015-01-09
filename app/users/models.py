@@ -18,6 +18,7 @@ class User(db.Model):
 	dietary_restrictions = db.Column(db.String(150))
 
 	week = db.relationship("Week", backref = db.backref('user'), uselist=False)
+	days = db.relationship("Day", backref = db.backref('user'))
 
 	def __init__(self, name=None, email=None, password=None):
 		self.name = name
@@ -80,7 +81,7 @@ class Week(db.Model):
 	def __init__(self, user=None):
 		self.user = user
 		for i in range(7):
-			my_day = Day(i, self)
+			my_day = Day(i, self, user)
 
 	def __repr__(self):
 		return '<Week for %r>' % (self.user.name)
@@ -99,9 +100,12 @@ class Day(db.Model):
 	dinner = db.Column(db.Boolean, default = False)
 	snacks = db.Column(db.Boolean, default = False)
 
-	def __init__(self, day_of_week=None, week=None):
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+	def __init__(self, day_of_week=None, week=None, user=None):
 		self.week = week
 		self.day_of_week = day_of_week
+		self.user = user
 
 	def __repr__(self):
 		return 'Day {0} for {1}'.format(days_array[self.day_of_week], self.week.user.name)

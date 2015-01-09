@@ -16,8 +16,8 @@ def decision():
 
 names = ['Bob', 'Jimmy', 'Aman', 'Vik', 'Jason']
 for i in range(5):
-	email = random_string(10)
-	password = random_string(10)
+	email = names[i] + "@a.com"
+	password = "password"
 	my_user = User(names[i], email, password)
 	my_user.address = random_string(15)
 	my_user.phone = random_string(10)
