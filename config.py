@@ -1,5 +1,6 @@
 import os
 from os import environ
+import secret
 
 _basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,3 +18,14 @@ else:
 	SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join(_basedir, 'db_repository')
+
+MAIL_SERVER = 'smtp.googlemail.com'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = 'mealstoheal20@gmail.com'
+if os.environ.get('MAIL_PASSWORD'):
+	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+else:
+	MAIL_PASSWORD = secret.MAIL_PASSWORD
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
