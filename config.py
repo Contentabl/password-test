@@ -24,8 +24,8 @@ MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
 MAIL_USERNAME = 'mealstoheal20@gmail.com'
-if os.environ.get('MAIL_PASSWORD'):
+"""if os.environ.get('MAIL_PASSWORD'):
 	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 else:
 	MAIL_PASSWORD = secret.MAIL_PASSWORD
-MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')"""
