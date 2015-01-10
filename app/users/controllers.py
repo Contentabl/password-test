@@ -100,7 +100,7 @@ def login():
 
 @users.route('/auth/', methods=['GET'])
 def auth():
-	if current_user:
+	if current_user.is_authenticated():
 		return redirect('users/dashboard/')
 	return render_template('login/login.html')
 
