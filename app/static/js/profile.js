@@ -139,7 +139,7 @@ function updateProfile(){
     $("input[name=option1]:checked").each(function() {
         var diet = $(this).val();
         diets.push(diet);
-    };
+    });
     console.log(diets);
     $.ajax({
         type: "POST",
