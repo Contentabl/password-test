@@ -32,8 +32,8 @@ function loadDay(day){
 			var user = curMealData[j]['user'];
 			var notes = curMealData[j]['notes'];
 			var name = user['name'];
-			var number = "1";
-			var diet = "None";
+			var number = curMealData[j]['num_people'];
+			var diet = user['dietary_restrictions'].join(', ');
 			var email = user['email'];
 			var phone = user['phone'];
 			var address = user['address'];

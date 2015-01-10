@@ -230,15 +230,15 @@ def chefpage():
 		day_objects = Day.query.filter_by(day_of_week = i).all()
 		for day_object in day_objects:
 			if day_object.breakfast:
-				day_ret['Breakfast'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Breakfast'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes, 'num_people' : day_object.week.num_people})
 			if day_object.lunch:
-				day_ret['Lunch'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Lunch'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes, 'num_people' : day_object.week.num_people})
 			if day_object.dinner:
-				day_ret['Dinner'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Dinner'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes, 'num_people' : day_object.week.num_people})
 			if day_object.snacks:
-				day_ret['Snacks'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Snacks'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes, 'num_people' : day_object.week.num_people})
 			if day_object.dessert:
-				day_ret['Dessert'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Dessert'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes, 'num_people' : day_object.week.num_people})
 		day_name = days_array[i]
 		ret[day_name] = day_ret
 
