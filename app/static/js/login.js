@@ -64,6 +64,9 @@ function login(){
     if (msg['status'] == 0){
       alert(msg['message']);
     }
+    if (msg['status'] == 2){
+      window.location.href = "/users/chef/";
+    }
     else{
       console.log('success');
       //window.location.href = "/users/wtflink";

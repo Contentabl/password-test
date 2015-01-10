@@ -10,6 +10,7 @@ import requests
 from app import db, lm, app, assets
 from app.users.models import *
 from app.users.emails import *
+from config import MAIL_PASSWORD
 
 users = Blueprint('users', __name__)
 
@@ -68,6 +69,16 @@ def login():
 	ARGS:
 		email, password
 	"""
+	email = request.json["email"]
+	password = request.json["password"]
+	
+	# Check if it's a chef
+	if email == "mealstoheal20@gmail.com" and password == MAIL_PASSWORD:
+		session['chef'] = True
+		return jsonify({
+			'status' : 2
+			})
+
 	# Redirect if they are already logged in
 	if current_user.is_authenticated():
 		return jsonify({
@@ -112,6 +123,8 @@ def dashboard():
 
 @users.route('/chef/', methods=['POST', 'GET'])
 def chef():
+	#if 'chef' not in session:
+	#	return "Please log in as a chef"
 	return render_template('dashboard/chef.html')
 
 
@@ -184,6 +197,9 @@ def update_diet():
 @login_required
 def order():
 	order = request.json['order']
+	my_week = current_user.week
+	my_week.num_people = order['numPeople'][0]
+	db.session.add(week)
 	for day in days_array_list:
 		day_object = Day.query.filter_by(user = current_user, day_of_week = days_array_reverse[day]).first()
 		current_order = order[day]
@@ -206,6 +222,8 @@ def chefpage():
 	ARGS: None
 	RET: A very complicated JSON object
 	"""
+	#if 'chef' not in session:
+	#	return "Please log in as a chef"
 	ret = {}
 	for i in range(7):
 		day_ret = {'Breakfast':[], 'Lunch':[], 'Dinner':[], 'Snacks':[], 'Dessert':[]}
@@ -220,18 +238,11 @@ def chefpage():
 			if day_object.snacks:
 				day_ret['Snacks'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
 			if day_object.dessert:
-				day_ret['Dessert'].append({'user' : day_object.wee.user.getMetaData(), 'notes' : day_object.week.notes})
+				day_ret['Dessert'].append({'user' : day_object.week.user.getMetaData(), 'notes' : day_object.week.notes})
 		day_name = days_array[i]
 		ret[day_name] = day_ret
 
 	return jsonify({'data': ret})
-
-@users.route('/chefview/', methods= ['GET'])
-def chefview():
-	"""
-	Renders the chef view
-	"""
-	return render_template('dashboard/chef.html')
 
 @users.route('/dietview/', methods = ['GET'])
 def dietview():

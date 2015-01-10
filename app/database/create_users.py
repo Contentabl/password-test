@@ -26,6 +26,7 @@ for i in range(5):
 		day.lunch = decision()
 		day.dinner = decision()
 		day.snacks = decision()
+		day.dessert = decision()
 		db.session.add(day)
 
 db.session.commit()

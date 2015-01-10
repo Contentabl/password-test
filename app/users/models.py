@@ -76,6 +76,7 @@ class Week(db.Model):
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 	notes = db.Column(db.Text, default = "")
 	days = db.relationship("Day", backref = db.backref('week'))
+	num_people = db.Column(db.Integer, default = 1)
 
 	def __init__(self, user=None):
 		self.user = user
