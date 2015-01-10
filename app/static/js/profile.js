@@ -121,7 +121,6 @@ function updateProfile(){
     streetBox = $(".streetBox");
     stateBox = $(".stateBox");
     zipBox = $(".zipBox");
-    dietOptions = $(".dietOptions");
     var address = streetBox.val() + ", " + stateBox.val() + ", " + zipBox.val();
     var notes = $(".notesBox").val();
     $.ajax({
@@ -130,9 +129,16 @@ function updateProfile(){
        dataType: "json",
        url: "/users/profile/update/",
        data: JSON.stringify({name : nameBox.val(), email : emailBox.val(), address: address, 
-        phone: phoneBox.val(), dietary_restrictions: dietOptions.find(":selected").text(), notes: notes})
+        phone: phoneBox.val(), notes: notes})
        }).done(function( msg ) {
                debug = msg;
                console.log(msg)
                });
+
+    var diets = Array();
+    $("input[name=option1]:checked").each(function() {
+        var diet = $(this).val();
+        diets.push(diet);
+    }
+    console.log(diets);
 }
