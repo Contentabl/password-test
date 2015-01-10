@@ -141,4 +141,15 @@ function updateProfile(){
         diets.push(diet);
     }
     console.log(diets);
+    $.ajax({
+        type: "POST",
+       contentType: "application/json",
+       dataType: "json",
+       url: "/users/diet/update/",
+       data: JSON.stringify({diet: diets})
+       }).done(function( msg ) {
+               debug = msg;
+               console.log(msg)
+               });
+    
 }
