@@ -111,6 +111,7 @@ def login():
 
 @users.route('/auth/', methods=['GET'])
 def auth():
+	print current_user
 	if current_user.is_authenticated():
 		return redirect('users/dashboard/')
 	return render_template('login/login.html')
@@ -147,6 +148,30 @@ def info():
 	return jsonify({
 		'info': current_user.getMetaData()
 		})
+
+@users.route('/orderinfo/', methods=['GET'])
+@login_required
+def orderinfo():
+	"""
+	A function to give the users orders for displaying
+	"""
+	ret = {}
+	for day in current_user.days:
+		day_array = []
+		day_array.append(day.breakfast)
+		day_array.append(day.lunch)
+		day_array.append(day.dinner)
+		day_array.append(day.snacks)
+		day_array.append(day.dessert)
+		day_string = days_array[day.day_of_week]
+		ret[day_string] = day_array
+
+	return jsonify({
+		'data' : ret
+		})
+
+
+
 
 @users.route('/profile/update/', methods = ['POST'])
 @login_required
