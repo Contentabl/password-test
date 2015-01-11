@@ -47,7 +47,7 @@ $(window).load(function(){
                     $(".state _placeHolder").html(address[1]);
                     $(".zip _placeHolder").html(address[2]);
                 }
-               console.log(msg)
+               //console.log(msg)
                });
 
     // get order info
@@ -70,13 +70,13 @@ $(window).load(function(){
                     }
                }
                var numPeople = msg["num_people"];
-               console.log(numPeople);
+               //console.log(numPeople);
                if (numPeople == 0 || numPeople == null)
                     $(".num1").prop("checked", true);
                else
                     $(".num" + numPeople).prop("checked", true);
 
-               console.log(msg)
+               //console.log(msg)
                });
     
 });
