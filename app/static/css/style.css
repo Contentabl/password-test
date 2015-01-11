@@ -176,7 +176,8 @@ a:hover {
 }
 .logoutbtn {
   position: absolute;
-    top: 430px;
+    top: 5px;
+    right: 30px;
   right: 10px;
   z-index: 1;
   font: 24px/36px 'Droid Sans', sans-serif;
