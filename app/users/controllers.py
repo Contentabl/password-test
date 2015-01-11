@@ -167,7 +167,8 @@ def orderinfo():
 		ret[day_string] = day_array
 
 	return jsonify({
-		'data' : ret
+		'data' : ret,
+		'num_people' : current_user.week.num_people
 		})
 
 
