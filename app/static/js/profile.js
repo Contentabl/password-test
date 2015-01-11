@@ -3,8 +3,11 @@
  */
 
 var orderButton;
+var allDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var daysList = ['mondayList', 'tuesdayList', 'wednesdayList', 'thursdayList', 'fridayList', 'saturdayList', 'sundayList'];
 var mealsList = ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Dessert'];
+var userInfo;
+var orderInfo;
 var nameBox;
 var emailBox;
 var phoneBox;
@@ -13,7 +16,67 @@ var stateBox;
 var zipBox;
 var dietOptions;
 
+$(window).load(function(){
+    nameBox = $(".nameBox");
+    emailBox = $(".emailBox");
+    phoneBox = $(".phoneBox");
+    streetBox = $(".streetBox");
+    stateBox = $(".stateBox");
+    zipBox = $(".zipBox");
+    // get user info
+    $.ajax({
+        type: "GET",
+       contentType: "application/json",
+       dataType: "json",
+       url: "/users/info/ ",
+       }).done(function( msg ) {
+               debug = msg;
+               userInfo = msg;
+               var info = msg["info"];
+               nameBox.attr("placeholder", info["name"]);
+               $(".name _placeHolder").html(info["name"]);
+               if (info["name"] != null && info["name"] != "")
+                    $(".name _placeHolder").html(info["name"]);
+               if (info["email"] != null && info["email"] != "")
+                    $(".email _placeHolder").html(info["email"]); 
+               if (info["phone"] != null && info["phone"] != "")
+                    $(".email _placeHolder").html(info["phone"]);
+                var address = info["address"].split(",");
+                if (address.length == 3){
+                    $(".street _placeHolder").html(address[0]);
+                    $(".state _placeHolder").html(address[1]);
+                    $(".zip _placeHolder").html(address[2]);
+                }
+               console.log(msg)
+               });
+
+    // get order info
+    $.ajax({
+        type: "GET",
+       contentType: "application/json",
+       dataType: "json",
+       url: "/users/orderinfo/ ",
+       }).done(function( msg ) {
+               debug = msg;
+               orderInfo = msg["data"];
+               var numDays = allDays.length;
+               var numMeals = mealsList.length;
+
+               for (var i = 0; i < numDays; i++){
+                    for (var j = 0; j < numMeals; j++){
+                        if (orderInfo[allDays[i]][j]){
+                            $("." + allDays[i] + " ." + mealsList[j]).prop("checked", true);
+                        }
+                    }
+               }
+
+               console.log(msg)
+               });
+    
+});
+
 $(document).ready(function(){
+    
 });
 
 function topOrderClicked(){
@@ -85,7 +148,7 @@ function clearList(){
 function submitOrders(){
     numDays = daysList.length;
     numMeals = mealsList.length;
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    var days = allDays;
     result = {};
     for (var i = 0; i < numDays; i++){
         result[days[i]] = new Array();
@@ -115,21 +178,33 @@ function submitOrders(){
 
 }
 function updateProfile(){
-    nameBox = $(".nameBox");
-    emailBox = $(".emailBox");
-    phoneBox = $(".phoneBox");
-    streetBox = $(".streetBox");
-    stateBox = $(".stateBox");
-    zipBox = $(".zipBox");
-    var address = streetBox.val() + ", " + stateBox.val() + ", " + zipBox.val();
-    var notes = $(".notesBox").val();
+
+    var street = streetBox.val();
+    var state = stateBox.val();
+    var zip = zipBox.val(); 
+    var notes = $(".notesBox").val();   
+    var name = nameBox.val();
+    var email = emailBox.val();
+    var phone = phoneBox.val();
+
+    var address = street + ", " + state + ", " + zip;
+    var data = {};
+
+    if (name != "")
+        data["name"] = name;
+    if (email != "")
+        data["email"] = email;
+    if (phone != "")
+        data["phone"] = phone;
+    if (street != "" && state != "" && zip != "")
+        data["address"] = address;
+
     $.ajax({
         type: "POST",
        contentType: "application/json",
        dataType: "json",
        url: "/users/profile/update/",
-       data: JSON.stringify({name : nameBox.val(), email : emailBox.val(), address: address, 
-        phone: phoneBox.val(), notes: notes})
+       data: JSON.stringify(data)
        }).done(function( msg ) {
                debug = msg;
                console.log(msg)

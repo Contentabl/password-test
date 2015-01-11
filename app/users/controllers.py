@@ -224,7 +224,7 @@ def order():
 	order = request.json['order']
 	my_week = current_user.week
 	my_week.num_people = order['numPeople'][0]
-	db.session.add(week)
+	db.session.add(my_week)
 	for day in days_array_list:
 		day_object = Day.query.filter_by(user = current_user, day_of_week = days_array_reverse[day]).first()
 		current_order = order[day]
