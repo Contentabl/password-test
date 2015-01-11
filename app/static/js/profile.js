@@ -6,6 +6,10 @@ var orderButton;
 var allDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var daysList = ['mondayList', 'tuesdayList', 'wednesdayList', 'thursdayList', 'fridayList', 'saturdayList', 'sundayList'];
 var mealsList = ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Dessert'];
+var noAddress;
+var street;
+var zip;
+var state;
 var userInfo;
 var orderInfo;
 var nameBox;
@@ -14,6 +18,7 @@ var phoneBox;
 var streetBox;
 var stateBox;
 var zipBox;
+var notesBox;
 var dietOptions;
 
 $(window).load(function(){
@@ -23,6 +28,7 @@ $(window).load(function(){
     streetBox = $(".streetBox");
     stateBox = $(".stateBox");
     zipBox = $(".zipBox");
+    notesBox = $(".notesBox");
     // get user info
     $.ajax({
         type: "GET",
@@ -33,36 +39,8 @@ $(window).load(function(){
                debug = msg;
                userInfo = msg;
                var info = msg["info"];
+                setBoxes(info);
 
-               if (info["name"] != null && info["name"] != "")
-                    nameBox.attr("placeholder", info["name"]);
-                else
-                    nameBox.attr("placeholder", "Name");
-               if (info["email"] != null && info["email"] != "")
-                    emailBox.attr("placeholder", info["email"]); 
-                else
-                    emailBox.attr("placeholder", "Email Address");
-               if (info["phone"] != null && info["phone"] != "")
-                    phoneBox.attr("placeholder", info["phone"]);
-                else
-                    phoneBox.attr("placeholder", "Phone Number");
-
-                var address = info["address"].split(",");
-                if (address.length == 3){
-                    streetBox.attr("placeholder", address[0]);
-                    stateBox.attr("placeholder", address[1]);
-                    zipBox.attr("placeholder", address[2]);
-                }
-                else{
-                    streetBox.attr("placeholder", "Street Address");
-                    stateBox.attr("placeholder", "State");
-                    zipBox.attr("placeholder", "Zip Code");
-                }
-                var diets = info['dietary_restrictions'];
-                var numDiets = diets.length;
-                for(var i = 0; i < numDiets; i++){
-                    $("." + diets[i]).prop("checked", true);
-                }
                //console.log(msg)
                });
 
@@ -92,7 +70,7 @@ $(window).load(function(){
                else
                     $(".num" + numPeople).prop("checked", true);
 
-               console.log(msg)
+               //console.log(msg)
                });
     
 });
@@ -101,6 +79,84 @@ $(document).ready(function(){
     
 });
 
+function selectDietRestrictions(diets){
+    var numDiets = diets.length;
+    for(var i = 0; i < numDiets; i++){
+        $("." + diets[i]).prop("checked", true);
+    }
+}
+function setBoxes(info){
+    if (info["name"] != null && info["name"] != ""){
+        nameBox.attr("placeholder", info["name"]);
+        nameBox.attr("style", "background-color: #D3D3D3");
+        nameBox.keyup(function () {
+            nameBox.attr("style", "background-color: #FFFFFF"); 
+        });
+    }
+    else
+        nameBox.attr("placeholder", "Name");
+   if (info["email"] != null && info["email"] != ""){
+        emailBox.attr("placeholder", info["email"]); 
+        emailBox.attr("style", "background-color: #D3D3D3");
+        emailBox.keyup(function () {
+            emailBox.attr("style", "background-color: #FFFFFF"); 
+        });
+    }
+    else
+        emailBox.attr("placeholder", "Email Address");
+   if (info["phone"] != null && info["phone"] != ""){
+        phoneBox.attr("placeholder", info["phone"]);
+        phoneBox.attr("style", "background-color: #D3D3D3");
+        phoneBox.keyup(function () {
+            phoneBox.attr("style", "background-color: #FFFFFF"); 
+        });
+    }
+    else
+        phoneBox.attr("placeholder", "Phone Number");
+
+    var address = info["address"].split(",");
+    if (address.length == 3){
+        streetBox.attr("placeholder", address[0]);
+        stateBox.attr("placeholder", address[1]);
+        zipBox.attr("placeholder", address[2]);
+        street = address[0];
+        state = address[1];
+        zip = address[2];
+        streetBox.attr("style", "background-color: #D3D3D3");
+        stateBox.attr("style", "background-color: #D3D3D3");
+        zipBox.attr("style", "background-color: #D3D3D3");
+        streetBox.keyup(function () {
+            streetBox.attr("style", "background-color: #FFFFFF"); 
+        });
+        stateBox.keyup(function () {
+            stateBox.attr("style", "background-color: #FFFFFF"); 
+        });
+        zipBox.keyup(function () {
+            zipBox.attr("style", "background-color: #FFFFFF"); 
+        });
+        noAddress = false;
+    }
+    else{
+        noAddress = true;
+        streetBox.attr("placeholder", "Street and City");
+        stateBox.attr("placeholder", "State");
+        zipBox.attr("placeholder", "Zip Code");
+    }
+    var diets = info['dietary_restrictions'];
+    selectDietRestrictions(diets);
+
+    var notes = info['notes'];
+    if (notes != null && notes != ""){
+        notesBox.attr("placeHolder", notes);
+        notesBox.attr("style", "background-color: #D3D3D3");
+        notesBox.keyup(function () {
+            notesBox.attr("style", "background-color: #FFFFFF"); 
+        });
+    }
+    else{
+        notesBox.attr("placeHolder", "Additional Comments:");
+    }
+}
 function topOrderClicked(){
     $(".page").hide();
     $(".topLevel").show();
@@ -201,15 +257,13 @@ function submitOrders(){
 }
 function updateProfile(){
 
-    var street = streetBox.val();
-    var state = stateBox.val();
-    var zip = zipBox.val(); 
-    var notes = $(".notesBox").val();   
+    var newStreet = streetBox.val();
+    var newState = stateBox.val();
+    var newZip = zipBox.val(); 
+    var notes = notesBox.val();
     var name = nameBox.val();
     var email = emailBox.val();
     var phone = phoneBox.val();
-
-    var address = street + ", " + state + ", " + zip;
     var data = {};
 
     if (name != "")
@@ -218,11 +272,25 @@ function updateProfile(){
         data["email"] = email;
     if (phone != "")
         data["phone"] = phone;
-    if (street != "" && state != "" && zip != "")
-        data["address"] = address;
+    if (newStreet == "" || newState == "" || newZip == "" && noAddress){
+        alert("Please fill in all address fields!");
+        return;
+    }
+    else if (newStreet == ""){
+        newStreet = street;
+    }
+    else if (newState == ""){
+        newState = state;
+    }
+    else if (newZip = ""){
+        newZip = zip;
+    }
+    var address = newStreet + ", " + newState + ", " + newZip;
+    data["address"] = address;
+
     if (notes != "")
         data["notes"] = notes;
-
+    console.log(data);
     $.ajax({
         type: "POST",
        contentType: "application/json",
@@ -231,6 +299,7 @@ function updateProfile(){
        data: JSON.stringify(data)
        }).done(function( msg ) {
                debug = msg;
+               setBoxes(data);
                //console.log(msg)
                });
 
@@ -239,7 +308,6 @@ function updateProfile(){
         var diet = $(this).val();
         diets.push(diet);
     });
-    console.log(diets);
     $.ajax({
         type: "POST",
        contentType: "application/json",
@@ -248,6 +316,7 @@ function updateProfile(){
        data: JSON.stringify({diet: diets})
        }).done(function( msg ) {
                debug = msg;
+               selectDietRestrictions(diets);
                //console.log(msg)
                });
     
