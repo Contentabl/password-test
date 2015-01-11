@@ -40,6 +40,8 @@ $(window).load(function(){
                userInfo = msg;
                var info = msg["info"];
                 setBoxes(info);
+                var diets = info['dietary_restrictions'];
+                selectDietRestrictions(diets);
 
                //console.log(msg)
                });
@@ -114,7 +116,7 @@ function setBoxes(info){
     else
         phoneBox.attr("placeholder", "Phone Number");
 
-    var address = info["address"].split(",");
+    var address = info["address"].split(", ");
     if (address.length == 3){
         streetBox.attr("placeholder", address[0]);
         stateBox.attr("placeholder", address[1]);
@@ -138,12 +140,10 @@ function setBoxes(info){
     }
     else{
         noAddress = true;
-        streetBox.attr("placeholder", "Street and City");
-        stateBox.attr("placeholder", "State");
+        streetBox.attr("placeholder", "Street Address");
+        stateBox.attr("placeholder", "City and State");
         zipBox.attr("placeholder", "Zip Code");
     }
-    var diets = info['dietary_restrictions'];
-    selectDietRestrictions(diets);
 
     var notes = info['notes'];
     if (notes != null && notes != ""){
@@ -272,17 +272,17 @@ function updateProfile(){
         data["email"] = email;
     if (phone != "")
         data["phone"] = phone;
-    if (newStreet == "" || newState == "" || newZip == "" && noAddress){
+    if ((newStreet == "" || newState == "" || newZip == "") && noAddress == true){
         alert("Please fill in all address fields!");
         return;
     }
-    else if (newStreet == ""){
+    if (newStreet == ""){
         newStreet = street;
     }
-    else if (newState == ""){
+    if (newState == ""){
         newState = state;
     }
-    else if (newZip = ""){
+    if (newZip == ""){
         newZip = zip;
     }
     var address = newStreet + ", " + newState + ", " + newZip;
@@ -290,7 +290,7 @@ function updateProfile(){
 
     if (notes != "")
         data["notes"] = notes;
-    console.log(data);
+    //console.log(data);
     $.ajax({
         type: "POST",
        contentType: "application/json",
