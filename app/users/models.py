@@ -30,6 +30,7 @@ class User(db.Model):
 		self.time_of_signup = datetime.datetime.now()
 		self.set_password(password)
 		my_week = Week(self)
+		self.address = ""
 
 	def set_password(self, password):
 		self.pw_hash = generate_password_hash(password + self.salt)
