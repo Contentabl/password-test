@@ -210,10 +210,15 @@ def update_diet():
 	Used as an endpoint for updating a users diet
 	ARGS: 'diet', a list of strings of dietary restrictions
 	"""
+	new_diet = json.dumps(request.json['diet'])
+	if new_diet == current_user.dietary_restrictions:
+		return jsonify({
+			'status' : 2
+		})
 
 	diet_object = Diet(current_user)
-	diet_object.dietary_restrictions = json.dumps(request.json['diet'])
-	current_user.dietary_restrictions = json.dumps(request.json['diet'])
+	diet_object.dietary_restrictions = new_diet
+	current_user.dietary_restrictions = new_diet
 	db.session.add(diet_object)
 	db.session.add(current_user)
 	db.session.commit()
