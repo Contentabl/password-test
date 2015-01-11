@@ -69,6 +69,12 @@ $(window).load(function(){
                         }
                     }
                }
+               var numPeople = msg["num_people"];
+               console.log(numPeople);
+               if (numPeople == 0 || numPeople == null)
+                    $(".num1").prop("checked", true);
+               else
+                    $(".num" + numPeople).prop("checked", true);
 
                console.log(msg)
                });

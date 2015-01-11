@@ -10,7 +10,7 @@ $(document).ready(function(){
        }).done(function( msg ) {
                debug = msg;
                data = msg['data'];
-               //console.log(data);
+               console.log(data);
                loadDay("Sunday");
                });
     $(".Week").on('change', function() {
