@@ -33,19 +33,35 @@ $(window).load(function(){
                debug = msg;
                userInfo = msg;
                var info = msg["info"];
-               nameBox.attr("placeholder", info["name"]);
-               $(".name _placeHolder").html(info["name"]);
+
                if (info["name"] != null && info["name"] != "")
-                    $(".name _placeHolder").html(info["name"]);
+                    nameBox.attr("placeholder", info["name"]);
+                else
+                    nameBox.attr("placeholder", "Name");
                if (info["email"] != null && info["email"] != "")
-                    $(".email _placeHolder").html(info["email"]); 
+                    emailBox.attr("placeholder", info["email"]); 
+                else
+                    emailBox.attr("placeholder", "Email Address");
                if (info["phone"] != null && info["phone"] != "")
-                    $(".email _placeHolder").html(info["phone"]);
+                    phoneBox.attr("placeholder", info["phone"]);
+                else
+                    phoneBox.attr("placeholder", "Phone Number");
+
                 var address = info["address"].split(",");
                 if (address.length == 3){
-                    $(".street _placeHolder").html(address[0]);
-                    $(".state _placeHolder").html(address[1]);
-                    $(".zip _placeHolder").html(address[2]);
+                    streetBox.attr("placeholder", address[0]);
+                    stateBox.attr("placeholder", address[1]);
+                    zipBox.attr("placeholder", address[2]);
+                }
+                else{
+                    streetBox.attr("placeholder", "Street Address");
+                    stateBox.attr("placeholder", "State");
+                    zipBox.attr("placeholder", "Zip Code");
+                }
+                var diets = info['dietary_restrictions'];
+                var numDiets = diets.length;
+                for(var i = 0; i < numDiets; i++){
+                    $("." + diets[i]).prop("checked", true);
                 }
                //console.log(msg)
                });
@@ -76,7 +92,7 @@ $(window).load(function(){
                else
                     $(".num" + numPeople).prop("checked", true);
 
-               //console.log(msg)
+               console.log(msg)
                });
     
 });
@@ -169,8 +185,8 @@ function submitOrders(){
     }
     result['numPeople'] = new Array();
     result['numPeople'].push($('input[name=numPeople]:checked').val());
-    console.log("submit");
-    console.log(result)
+    //console.log("submit");
+    //console.log(result)
     $.ajax({
         type: "POST",
        contentType: "application/json",
@@ -179,7 +195,7 @@ function submitOrders(){
        data: JSON.stringify({order: result})
        }).done(function( msg ) {
                debug = msg;
-               console.log(msg)
+               //console.log(msg)
                });
 
 }
@@ -204,6 +220,8 @@ function updateProfile(){
         data["phone"] = phone;
     if (street != "" && state != "" && zip != "")
         data["address"] = address;
+    if (notes != "")
+        data["notes"] = notes;
 
     $.ajax({
         type: "POST",
@@ -213,7 +231,7 @@ function updateProfile(){
        data: JSON.stringify(data)
        }).done(function( msg ) {
                debug = msg;
-               console.log(msg)
+               //console.log(msg)
                });
 
     var diets = Array();
@@ -230,7 +248,7 @@ function updateProfile(){
        data: JSON.stringify({diet: diets})
        }).done(function( msg ) {
                debug = msg;
-               console.log(msg)
+               //console.log(msg)
                });
     
 }
