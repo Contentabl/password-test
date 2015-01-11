@@ -192,6 +192,8 @@ def update():
 		user.address = request.json['address']
 	if 'phone' in request.json:
 		user.phone = request.json['phone']
+	if 'notes' in request.json:
+		user.week.notes = request.json['notes']
 
 	db.session.add(user)
 	db.session.commit()

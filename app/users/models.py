@@ -64,7 +64,8 @@ class User(db.Model):
 			'email' : self.email,
 			'address' : self.address,
 			'phone' : self.phone,
-			'dietary_restrictions' : restrictions
+			'dietary_restrictions' : restrictions,
+			'notes' : self.week.notes
 		}
 
 class Week(db.Model):
