@@ -91,6 +91,7 @@ function setBoxes(info){
     if (info["name"] != null && info["name"] != ""){
         nameBox.attr("value", info["name"]);
         nameBox.attr("style", "background-color: #D3D3D3");
+        nameBox.attr("placeholder", "Name");
         nameBox.keyup(function () {
             nameBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -100,6 +101,7 @@ function setBoxes(info){
    if (info["email"] != null && info["email"] != ""){
         emailBox.attr("value", info["email"]); 
         emailBox.attr("style", "background-color: #D3D3D3");
+        emailBox.attr("placeholder", "Email Address");
         emailBox.keyup(function () {
             emailBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -109,6 +111,7 @@ function setBoxes(info){
    if (info["phone"] != null && info["phone"] != ""){
         phoneBox.attr("value", info["phone"]);
         phoneBox.attr("style", "background-color: #D3D3D3");
+        phoneBox.attr("placeholder", "Phone Number");
         phoneBox.keyup(function () {
             phoneBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -124,6 +127,9 @@ function setBoxes(info){
         street = address[0];
         state = address[1];
         zip = address[2];
+        streetBox.attr("placeholder", "Street Address");
+        stateBox.attr("placeholder", "City and State");
+        zipBox.attr("placeholder", "Zip Code");
         streetBox.attr("style", "background-color: #D3D3D3");
         stateBox.attr("style", "background-color: #D3D3D3");
         zipBox.attr("style", "background-color: #D3D3D3");

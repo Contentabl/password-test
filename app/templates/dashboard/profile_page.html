@@ -101,7 +101,7 @@
             <form id="contact-form">
                 <fieldset>
                     <label class="name">
-                        <input type="text" name="name" class="nameBox" placeholder="" value="" data-constraints="@Required @JustLetters">
+                        <input type="text" name="name" class="nameBox" data-constraints="@Required @JustLetters">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid name.</span>
                     </label>
@@ -109,7 +109,7 @@
                     <br>
                     <br>
                     <label class="email">
-                        <input type="text" name="email" class="emailBox" placeholder="" value="" data-constraints="@Required @Email">
+                        <input type="text" name="email" class="emailBox" data-constraints="@Required @Email">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid email.</span>
                     </label>
@@ -117,7 +117,7 @@
                     <br>
                     <br>
                     <label class="phone">
-                        <input type="text" name="phone" class="phoneBox" placeholder="" value="" data-constraints="@Required @JustNumbers">
+                        <input type="text" name="phone" class="phoneBox" data-constraints="@Required @JustNumbers">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid phone.</span>
                     </label>
@@ -125,7 +125,7 @@
                     <br>
                     <br>
                     <label class="streetAddress">
-                        <input type="text" name="streetAddress" class="streetBox" placeholder="" value="" data-constraints="@Required">
+                        <input type="text" name="streetAddress" class="streetBox" data-constraints="@Required">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid street address.</span>
                     </label>
@@ -133,7 +133,7 @@
                     <br>
                     <br>
                     <label class="state">
-                        <input type="text" name="state" class="stateBox" placeholder="" value="">
+                        <input type="text" name="state" class="stateBox">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid state.</span>
                     </label>
@@ -141,7 +141,7 @@
                     <br>
                     <br>
                     <label class="zip">
-                        <input type="text" name="zip" class="zipBox" placeholder="" value="">
+                        <input type="text" name="zip" class="zipBox">
                         <span class="empty-message">*This field is required.</span>
                         <span class="error-message">*This is not a valid ZIP code.</span>
                     </label>
