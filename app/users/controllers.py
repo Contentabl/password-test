@@ -128,6 +128,12 @@ def chef():
 	#	return "Please log in as a chef"
 	return render_template('dashboard/chef.html')
 
+@users.route('/history/', methods=['POST', 'GET'])
+def history():
+	#if 'chef' not in session:
+	#	return "Please log in as a chef"
+	return render_template('dashboard/dietHistory.html')
+
 
 @users.route('/logout/', methods=['POST', 'GET'])
 @login_required
