@@ -126,7 +126,12 @@ def dashboard():
 def chef():
 	#if 'chef' not in session:
 	#	return "Please log in as a chef"
-	#return render_template('dashboard/chef.html')
+	return render_template('dashboard/chef.html')
+
+@users.route('/chefUser/', methods=['POST', 'GET'])
+def chefUser():
+	#if 'chef' not in session:
+	#	return "Please log in as a chef"	
 	return render_template('dashboard/chefNew.html')
 
 @users.route('/history/', methods=['POST', 'GET'])
