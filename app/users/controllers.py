@@ -277,6 +277,35 @@ def chefpage():
 
 	return jsonify({'data': ret})
 
+@users.route('/chefdata/', methods = ['GET'])
+def chefdata():
+	"""
+	Returns a list of all the meals for the week 
+	ARGS: None
+	RET: A very complicated JSON object
+	"""
+	#if 'chef' not in session:
+	#	return "Please log in as a chef"
+	users = User.query.all()
+	ret = []
+	for user in users:
+		user_dict = user.getMetaData()
+		for day in user.days:
+			day_array = []
+			day_array.append(day.breakfast)
+			day_array.append(day.lunch)
+			day_array.append(day.dinner)
+			day_array.append(day.snacks)
+			day_array.append(day.dessert)
+			day_string = days_array[day.day_of_week]
+			user_dict[day_string] = day_array
+		user_dict['num_people'] = user.week.num_people
+		user_dict['data'] = day_array
+		ret.append(user_dict)
+	return jsonify({
+		'data' : ret
+		})
+
 @users.route('/dietview/', methods = ['GET'])
 def dietview():
 	"""
