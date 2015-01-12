@@ -155,6 +155,7 @@ function setBoxes(info){
     if (notes != null && notes != ""){
         notesBox.attr("value", notes);
         notesBox.attr("style", "background-color: #D3D3D3");
+        notesBox.attr("placeHolder", "Additional Comments:");
         notesBox.keyup(function () {
             notesBox.attr("style", "background-color: #FFFFFF"); 
         });
