@@ -89,8 +89,9 @@ function selectDietRestrictions(diets){
 }
 function setBoxes(info){
     if (info["name"] != null && info["name"] != ""){
-        nameBox.attr("placeholder", info["name"]);
+        nameBox.attr("value", info["name"]);
         nameBox.attr("style", "background-color: #D3D3D3");
+        nameBox.attr("placeholder", "Name");
         nameBox.keyup(function () {
             nameBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -98,8 +99,9 @@ function setBoxes(info){
     else
         nameBox.attr("placeholder", "Name");
    if (info["email"] != null && info["email"] != ""){
-        emailBox.attr("placeholder", info["email"]); 
+        emailBox.attr("value", info["email"]); 
         emailBox.attr("style", "background-color: #D3D3D3");
+        emailBox.attr("placeholder", "Email Address");
         emailBox.keyup(function () {
             emailBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -107,8 +109,9 @@ function setBoxes(info){
     else
         emailBox.attr("placeholder", "Email Address");
    if (info["phone"] != null && info["phone"] != ""){
-        phoneBox.attr("placeholder", info["phone"]);
+        phoneBox.attr("value", info["phone"]);
         phoneBox.attr("style", "background-color: #D3D3D3");
+        phoneBox.attr("placeholder", "Phone Number");
         phoneBox.keyup(function () {
             phoneBox.attr("style", "background-color: #FFFFFF"); 
         });
@@ -118,12 +121,15 @@ function setBoxes(info){
 
     var address = info["address"].split(", ");
     if (address.length == 3){
-        streetBox.attr("placeholder", address[0]);
-        stateBox.attr("placeholder", address[1]);
-        zipBox.attr("placeholder", address[2]);
+        streetBox.attr("value", address[0]);
+        stateBox.attr("value", address[1]);
+        zipBox.attr("value", address[2]);
         street = address[0];
         state = address[1];
         zip = address[2];
+        streetBox.attr("placeholder", "Street Address");
+        stateBox.attr("placeholder", "City and State");
+        zipBox.attr("placeholder", "Zip Code");
         streetBox.attr("style", "background-color: #D3D3D3");
         stateBox.attr("style", "background-color: #D3D3D3");
         zipBox.attr("style", "background-color: #D3D3D3");
@@ -147,8 +153,9 @@ function setBoxes(info){
 
     var notes = info['notes'];
     if (notes != null && notes != ""){
-        notesBox.attr("placeHolder", notes);
+        notesBox.attr("value", notes);
         notesBox.attr("style", "background-color: #D3D3D3");
+        notesBox.attr("placeHolder", "Additional Comments:");
         notesBox.keyup(function () {
             notesBox.attr("style", "background-color: #FFFFFF"); 
         });
