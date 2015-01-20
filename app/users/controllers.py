@@ -122,6 +122,22 @@ def auth():
 def dashboard():
 	return render_template('dashboard/profile_page.html')
 
+@users.route('/menu/', methods=['GET'])
+def menu():
+	return render_template('index/menu.html')
+
+@users.route('/about/', methods=['GET'])
+def about():
+	return render_template('index/about.html')
+
+@users.route('/service/', methods=['GET'])
+def service():
+	return render_template('index/service.html')
+
+@users.route('/contact/', methods=['GET'])
+def contact():
+	return render_template('index/contact.html')
+
 @users.route('/chef/', methods=['POST', 'GET'])
 def chef():
 	#if 'chef' not in session:
