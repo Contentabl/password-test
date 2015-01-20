@@ -17,6 +17,7 @@ class User(db.Model):
 	address = db.Column(db.Text)
 	phone = db.Column(db.String(20))
 	dietary_restrictions = db.Column(db.String(150))
+	freshbooks_id = db.Column(db.Integer)
 
 	week = db.relationship("Week", backref = db.backref('user'), uselist=False)
 	days = db.relationship("Day", backref = db.backref('user'))

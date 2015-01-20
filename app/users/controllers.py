@@ -6,10 +6,13 @@ from flask.ext.login import login_required, login_user, current_user, logout_use
 from datetime import datetime, timedelta
 import base64, random, string, math
 import requests
+from app.users.freshbooks import *
 
 from app import db, lm, app, assets
 from app.users.models import *
 from app.users.emails import *
+from app.chef.decorators import *
+from app.chef.controllers import *
 from config import MAIL_PASSWORD
 
 users = Blueprint('users', __name__)
@@ -51,11 +54,15 @@ def signup():
 	# Create a new user and add them to the database
 	else:
 		new_user = User(name, email, password)
+		new_user.freshbooks_id = create_user(email, name)
 		db.session.add(new_user)
 		db.session.commit()
 		session['auth'] = True
 		session['user_id'] = new_user.id
 		login_user(new_user)
+		
+		
+
 
 		return jsonify({
 			'status' : 1
@@ -123,23 +130,25 @@ def dashboard():
 	return render_template('dashboard/profile_page.html')
 
 @users.route('/chef/', methods=['POST', 'GET'])
+@chef_required
 def chef():
 	#if 'chef' not in session:
 	#	return "Please log in as a chef"
 	return render_template('dashboard/chef.html')
 
 @users.route('/chefUser/', methods=['POST', 'GET'])
+@chef_required
 def chefUser():
 	#if 'chef' not in session:
 	#	return "Please log in as a chef"	
 	return render_template('dashboard/chefNew.html')
 
 @users.route('/history/', methods=['POST', 'GET'])
+@chef_required
 def history():
 	#if 'chef' not in session:
 	#	return "Please log in as a chef"
 	return render_template('dashboard/dietHistory.html')
-
 
 @users.route('/logout/', methods=['POST', 'GET'])
 @login_required
@@ -261,6 +270,7 @@ def order():
 		})
 
 @users.route('/chefpage/', methods = ['GET'])
+@chef_required
 def chefpage():
 	"""
 	Returns a list of all the meals for the week 
@@ -290,6 +300,7 @@ def chefpage():
 	return jsonify({'data': ret})
 
 @users.route('/chefdata/', methods = ['GET'])
+@chef_required
 def chefdata():
 	"""
 	Returns a list of all the meals for the week 
@@ -319,6 +330,7 @@ def chefdata():
 		})
 
 @users.route('/dietview/', methods = ['GET'])
+@chef_required
 def dietview():
 	"""
 	Returns the history of people's diets
@@ -343,6 +355,7 @@ def dietview():
 	return jsonify({'data': ret})
 
 @users.route('/sendemail/', methods = ['GET'])
+@chef_required
 def sendemail():
 	send_all_emails()
 	return redirect('/')

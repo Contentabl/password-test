@@ -65,7 +65,7 @@ function login(){
       alert(msg['message']);
     }
     if (msg['status'] == 2){
-      window.location.href = "/users/chef/";
+      window.location.href = "/chef/dashboard/";
     }
     else{
       console.log('success');

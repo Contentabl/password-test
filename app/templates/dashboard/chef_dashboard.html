@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<input type="button" onclick="window.location = '/users/chef/';" value="Meals by Day">
+<input type="button" onclick="window.location = '/users/chefUser/';" value="Meals by User">
+<input type="button" onclick="window.location = '/users/history/';" value="View Diet Histories">
+<input type="button" onclick="window.location = '/sendemail/';" value="Send Weekly Email">
+<br>
+<br>
+<fieldset>
+	<p> Delete a User by email </p>
+	<form action="/chef/delete_user/" method="POST">
+	  Email<input type="text" name="email"><br>
+	  <input type="submit" value="Submit">
+	</form>
+</fieldset>
+
+<fieldset>
+	<p> Reset a User's Password </p>
+	<form action="/chef/reset_password/" method="POST">
+	  Email<input type="text" name="email"><br>
+	  Password<input type="text" name="password"><br>
+	  <input type="submit" value="Submit">
+	</form>
+</fieldset>
+<h1>Create Invoices</h1>
+<form action="/chef/freshbooks/invoices/" method="POST">
+    <input type="submit" name="my-form" value="Generate Invoices">
+</form>
+</html>
