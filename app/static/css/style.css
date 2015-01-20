@@ -1,4 +1,4 @@
-@import '../css/grid.css';
+@import '../css/.css';
 @import '../css/font-awesome.css';
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400);
 @import url(//fonts.googleapis.com/css?family=Open+Sans:700);
@@ -58,7 +58,7 @@ body {
   position: relative;
   background: #ffffff;
   color: #696565;
-  font: 300 italic 20px/30px 'Open Sans', sans-serif;
+  font: 300 normal 20px/30px 'Open Sans', sans-serif;
   min-width: 1400px;
 }
 .ic {
@@ -663,7 +663,7 @@ header h1.logo {
   margin-bottom: 8px !important;
 }
 #contacts .text2 {
-  font-style: italic;
+  font-style: normal;
   color: #ffffff;
   margin-bottom: 37px;
 }
