@@ -66,6 +66,10 @@ def reset_password():
 @chef.route('/freshbooks/invoices/', methods = ["POST"])
 @chef_required
 def update_freshbooks():
+	"""
+	Generates invoices for all the users
+	ARGS: None
+	"""
 	ret = ""
 	users = User.query.all()
 	meals = {}
@@ -97,6 +101,10 @@ def update_freshbooks():
 @chef.route('/freshbooks/single_invoice/', methods = ["POST"])
 @chef_required
 def create_single_invoice():
+	"""
+	Generates invoice for a specific user
+	ARGS: email
+	"""
 	email = request.form['email']
 	user = User.query.filter_by(email=email).first()
 	if not user:

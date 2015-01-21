@@ -1,6 +1,6 @@
 Hi,
 
-Please remember to choose your meals for this coming week in Meals to Heal. You can access it through the following link {{url}}/user/dashboard/
+Please remember to choose your meals for this coming week in Meals to Heal. You can access it through the following link meals-to-heal.herokuapp.com/users/dashboard/
 
 Best,
 Meals to Heal Team
