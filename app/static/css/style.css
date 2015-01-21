@@ -176,9 +176,8 @@ a:hover {
 }
 .logoutbtn {
   position: absolute;
-    top: 5px;
+    top: 30px;
     right: 30px;
-  right: 10px;
   z-index: 1;
   font: 24px/36px 'Droid Sans', sans-serif;
   color: #474b5d;
@@ -291,13 +290,13 @@ header .btn {
   z-index: 800;
 }
 header {
-  padding-top: 95px;
+  /*padding-top: 95px;*/
   color: #e6e5e5;
   display: block;
   position: relative;
   z-index: 999;
   text-align: center;
-  background: url(../images/slide.jpg) center 0 no-repeat;
+  /*background: url(../images/slide.jpg) center 0 no-repeat;*/
   padding-bottom: 33px;
 }
 header .rel {

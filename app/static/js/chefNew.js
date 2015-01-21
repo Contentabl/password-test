@@ -1,6 +1,9 @@
 var data;
 var dietHeader = "row header blue";
 var userHeader = "row header orange";
+var changes = Array();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var meals = {"Breakfast" : 1, "Lunch" : 2, "Dinner" : 3, "Snacks" : 4, "Dessert" : 5};
 
 $(document).ready(function(){
 	$.ajax({
@@ -64,24 +67,73 @@ function loadMeals(userIndex){
 }
 
 function addMealsRow(mealInfo){
-	var row = '<div class="row"><div class="cell">'+mealInfo["name"]+'</div>';
+	var curMeal = mealInfo["name"];
+	var row = '<div class="row"><div class="cell">'+curMeal+'</div>';
 	var numDays = mealInfo.length;
 	for (var i = 0; i < numDays; i++){
-		row += getCell(mealInfo[i]);
+		row += getCell(mealInfo[i], curMeal, i);
 	}
 	row += '</div';
 	$(".dietInfo").append(row);
 }
 
-function getCell(selected){
+function getCell(selected, mealName, rowNum){
 	var style = "";
+	var onclick = "onclick=\"select(\'"+mealName+"\', \'"+rowNum+"\');\" ";
+	var classString = 'class="cell ';
+	classString += mealName+' '+rowNum +' ';
 	if (selected){
-		style = 'style=background-color:green';
+		classString += 'selected" ';
 	}
 	else{
-		style = 'style=background-color:red'
+		classString += 'unselected" '; 
 	}
-	return '<div class="cell" ' + style + ' ></div>'
+	
+	return ('<div ' + onclick + classString + '></div>');
+}
+
+function select(mealName, rowNum){
+	var object = $("." + mealName + "." + rowNum);
+	console.log(object);
+	var classList = object.attr('class').split(/\s+/);
+	if (classList[3] == 'selected'){
+		object.removeClass("selected").addClass('unselected');
+	}
+	else if (classList[3] == 'unselected'){
+		object.removeClass("unselected").addClass('selected');
+	}
+	var day = days[classList[2]];
+	if (changes[day] == null){
+		changes[day] = Array();
+	}
+	var length = changes[day].length;
+	var mealNum = meals[classList[1]];
+	var exists = false;
+	var i = 0;
+	for (i = 0; i < length; i++){
+		if (changes[day][i] == mealNum){
+			exists = true;
+			break;
+		}
+	}
+	if (exists){
+		changes[day].splice(i, 1);
+	}
+	else{
+		changes[day].push(mealNum);
+	}
+}
+
+function update(){
+	$.ajax({
+       type: "POST",
+       contentType: "application/json",
+       dataType: "json",
+       url: "/chef/edit/",
+       data: JSON.stringify({changes: changes})
+       }).done(function( msg ) {
+
+	});
 }
 
 function clearRows(){
