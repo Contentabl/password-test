@@ -4,6 +4,7 @@
 
 var orderButton;
 var allDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var allDaysIndexed = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 var daysList = ['mondayList', 'tuesdayList', 'wednesdayList', 'thursdayList', 'fridayList', 'saturdayList', 'sundayList'];
 var mealsList = ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Dessert'];
 var noAddress;
@@ -233,7 +234,7 @@ function clearList(){
 function submitOrders(){
     numDays = daysList.length;
     numMeals = mealsList.length;
-    var days = allDays;
+    var days = allDaysIndexed;
     result = {};
     for (var i = 0; i < numDays; i++){
         result[days[i]] = new Array();
@@ -257,8 +258,11 @@ function submitOrders(){
        url: "/users/order/",
        data: JSON.stringify({order: result})
        }).done(function( msg ) {
-               debug = msg;
-               //console.log(msg)
+               if (msg['status'] == 2){
+                    alert(msg['message']); 
+                }
+
+               
                });
 
 }

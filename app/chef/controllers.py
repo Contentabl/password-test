@@ -94,6 +94,38 @@ def update_freshbooks():
 			ret += "Error creating invoice for " + user.name + "<br>"
 	return ret
 
+@chef.route('/freshbooks/single_invoice/', methods = ["POST"])
+@chef_required
+def create_single_invoice():
+	email = request.form['email']
+	user = User.query.filter_by(email=email).first()
+	if not user:
+		return "No user with email " + email
+	else:
+		meals = {}
+		meals['breakfasts'] = 0
+		meals['lunches'] = 0
+		meals['dinners'] = 0
+		meals['snacks'] = 0
+		meals['desserts'] = 0 
+		for day in user.week.days:
+			if day.breakfast:
+				meals['breakfasts'] += 1
+			if day.lunch:
+				meals['lunches'] += 1
+			if day.dinner:
+				meals['dinners'] += 1
+			if day.snacks:
+				meals['snacks'] += 1
+			if day.dessert:
+				meals['desserts'] += 1
+
+		resp = create_invoice(meals, user.freshbooks_id)
+		if resp == "ok":
+			return "Created invoice for " + user.name +"<br>"
+		else:
+			return "Error creating invoice for " + user.name + "<br>"		
+
 @chef.route('/edit/', methods = ['POST'])
 @chef_required
 def edit_meals():
