@@ -37,9 +37,11 @@ from app.admin import *
 assets = Environment(app)
 
 from app.users.controllers import users
+from app.chef.controllers import chef
 
 # Registering blueprints
 app.register_blueprint(users, url_prefix='/users')
+app.register_blueprint(chef, url_prefix='/chef')
 
 from app.users.models import *
 @app.route('/', methods=['GET'])
