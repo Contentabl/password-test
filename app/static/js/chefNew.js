@@ -4,6 +4,7 @@ var userHeader = "row header orange";
 var changes = Array();
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var meals = {"Breakfast" : 1, "Lunch" : 2, "Dinner" : 3, "Snacks" : 4, "Dessert" : 5};
+var curEmail; 
 
 $(document).ready(function(){
 	$.ajax({
@@ -45,6 +46,7 @@ function loadUser(userIndex){
 			diet += restrictions[i] + ", ";
 		}
 	}
+	curEmail = user["email"];
 	addUserInfo(user["name"], user["num_people"], diet, user["notes"], user["email"], user["phone"], user["address"]);
 
 	loadMeals(userIndex);
@@ -131,7 +133,7 @@ function update(){
        contentType: "application/json",
        dataType: "json",
        url: "/chef/edit/",
-       data: JSON.stringify({changes: changes})
+       data: JSON.stringify({changes: changes, email: curEmail})
        }).done(function( msg ) {
 
 	});
