@@ -12,6 +12,8 @@ from app.users.models import *
 from app.users.emails import *
 from app.chef.decorators import *
 from app.users.freshbooks import *
+from app.users.constants import *
+from app.users.constants import *
 from config import MAIL_PASSWORD
 
 chef = Blueprint('chef', __name__)
@@ -91,5 +93,44 @@ def update_freshbooks():
 		else:
 			ret += "Error creating invoice for " + user.name + "<br>"
 	return ret
+
+@chef.route('/edit/', methods = ['POST'])
+@chef_required
+def edit_meals():
+	"""
+	Accessed from /users/chefUser/ when the chef changes meals in the grid
+	ARGS:
+		email: the users email
+		data: a dict with different days of the week
+	"""
+	email = request.json['email']
+	user = User.query.filter_by(email=email).first()
+	if not user:
+		return jsonify({
+			'status' : 0,
+			'message' : "Error retrieving user"
+			})
+	data = request.json['data']
+
+	for day in days_array_list:
+		if day in data:
+			day_object = Day.query.filter_by(user=user, day_of_week = days_array_reverse[day]).first()
+			for meal in data[day]:
+				if meal == 1:
+					day_object.breakfast = not day_object.breakfast
+				if meal == 2:
+					day_object.lunch = not day_object.lunch
+				if meal == 3:
+					day_object.dinner = not day_object.dinner
+				if meal == 4:
+					day_object.snacks = not day_object.snacks
+				if meal == 5:
+					day_object.dessert = not day_object.dessert
+			db.session.add(day_object)
+	db.session.commit()
+	return jsonify({
+		'status' : 1
+		})
+
 
 

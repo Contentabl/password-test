@@ -13,6 +13,7 @@ from app.users.models import *
 from app.users.emails import *
 from app.chef.decorators import *
 from app.chef.controllers import *
+from app.users.constants import *
 from config import MAIL_PASSWORD
 
 users = Blueprint('users', __name__)
