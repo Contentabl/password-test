@@ -125,6 +125,7 @@ function select(mealName, rowNum){
 }
 
 function update(){
+	console.log(changes);
 	$.ajax({
        type: "POST",
        contentType: "application/json",
