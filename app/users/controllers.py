@@ -134,6 +134,10 @@ def about():
 def service():
 	return render_template('index/service.html')
 
+@users.route('/sources/', methods=['GET'])
+def sources():
+	return render_template('index/sources.html')
+
 @users.route('/contact/', methods=['GET'])
 def contact():
 	return render_template('index/contact.html')

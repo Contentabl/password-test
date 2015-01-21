@@ -349,7 +349,7 @@ header h1.logo {
   margin-left: 87px;
 }
 .navigation li:first-child + li + li {
-  margin-left: 265px;
+  /*margin-left: 265px;*/
 }
 .navigation li a {
   position: relative;
