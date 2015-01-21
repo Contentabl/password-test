@@ -58,7 +58,7 @@ body {
   position: relative;
   background: #ffffff;
   color: #696565;
-  font: 300 normal 20px/30px 'Bitter', serif;;
+  font: 300 normal 20px/30px 'Slabo';;
   min-width: 1400px;
 }
 .ic {
@@ -100,7 +100,7 @@ h5,
 h6 {
   font-weight: 400;
   color: #474b5d;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: 'Slabo';
   font-style: normal;
 }
 h2 {
