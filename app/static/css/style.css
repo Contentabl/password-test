@@ -344,7 +344,8 @@ header h1.logo {
 }
 .navigation li {
   display: inline-block;
-  font: 24px/36px 'Droid Sans', sans-serif;
+  font: 300 normal 24px/36px 'Bitter', serif;
+  /*font: 24px/36px 'Droid Sans', sans-serif;*/
 }
 .navigation li + li {
   margin-left: 87px;
