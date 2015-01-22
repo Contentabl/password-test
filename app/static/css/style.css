@@ -57,7 +57,8 @@ sss * {
 body {
   position: relative;
   background: #ffffff;
-  color: #696565;
+  /*color: #696565;*/
+  color: #FFFFFF;
   font: 300 normal 20px/30px 'Bitter', serif;;
   min-width: 1400px;
 }
