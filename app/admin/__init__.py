@@ -17,7 +17,7 @@ class MyView(BaseView):
 			abort(401)
 
 	def is_accessible(self):
-		return (app.config['DEBUG']) or (current_user.is_authenticated() and current_user.email in app.config['ADMINS'])
+		return True
 		#! this should obviously be changed before production. In fact a lot of this should be changed
 
 
@@ -26,7 +26,7 @@ class DataAdmin(ModelView):
 		super(DataAdmin, self).__init__(model, session, **kwargs)
 
 	def is_accessible(self):
-		return (app.config['DEBUG']) or (current_user.is_authenticated() and current_user.email in app.config['ADMINS'])
+		return 'chef' in session
 
 
 admin.add_view(DataAdmin(User, db.session))

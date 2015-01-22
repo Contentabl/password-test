@@ -1,7 +1,7 @@
 var data;
 var dietHeader = "row header blue";
 var userHeader = "row header orange";
-var changes = Array();
+var changes = {};
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var meals = {"Breakfast" : 1, "Lunch" : 2, "Dinner" : 3, "Snacks" : 4, "Dessert" : 5};
 var curEmail; 
@@ -128,13 +128,17 @@ function select(mealName, rowNum){
 
 function update(){
 	console.log(changes);
+	data = changes
 	$.ajax({
        type: "POST",
        contentType: "application/json",
        dataType: "json",
        url: "/chef/edit/",
-       data: JSON.stringify({changes: changes, email: curEmail})
+       data: JSON.stringify({data: changes, email: curEmail})
        }).done(function( msg ) {
+       	if (msg['status'] == 1){
+          changes = {}
+      }
 
 	});
 }

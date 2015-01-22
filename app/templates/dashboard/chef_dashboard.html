@@ -22,8 +22,17 @@
 	  <input type="submit" value="Submit">
 	</form>
 </fieldset>
-<h1>Create Invoices</h1>
-<form action="/chef/freshbooks/invoices/" method="POST">
-    <input type="submit" name="my-form" value="Generate Invoices">
-</form>
+<fieldset>
+	<p> Generate invoice for a specific user </p>
+	<form action="/chef/freshbooks/single_invoice/" method="POST">
+	  Email<input type="text" name="email"><br>
+	  <input type="submit" value="Submit">
+	</form>
+</fieldset>
+<fieldset>
+	<h1>Create Invoices</h1>
+	<form action="/chef/freshbooks/invoices/" method="POST">
+	    <input type="submit" name="my-form" value="Generate Invoices">
+	</form>
+</fieldset>
 </html>

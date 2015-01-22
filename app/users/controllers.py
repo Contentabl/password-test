@@ -3,7 +3,7 @@ from werkzeug import check_password_hash, generate_password_hash
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.assets import Environment, Bundle
 from flask.ext.login import login_required, login_user, current_user, logout_user
-from datetime import datetime, timedelta
+import datetime
 import base64, random, string, math
 import requests
 from app.users.freshbooks import *
@@ -13,6 +13,7 @@ from app.users.models import *
 from app.users.emails import *
 from app.chef.decorators import *
 from app.chef.controllers import *
+from app.users.constants import *
 from config import MAIL_PASSWORD
 
 users = Blueprint('users', __name__)
@@ -270,24 +271,33 @@ def update_diet():
 @users.route('/order/', methods = ['POST'])
 @login_required
 def order():
-	order = request.json['order']
-	my_week = current_user.week
-	my_week.num_people = order['numPeople'][0]
-	db.session.add(my_week)
-	for day in days_array_list:
-		day_object = Day.query.filter_by(user = current_user, day_of_week = days_array_reverse[day]).first()
-		current_order = order[day]
-		day_object.breakfast = current_order[0]
-		day_object.lunch = current_order[1]
-		day_object.dinner = current_order[2]
-		day_object.snacks = current_order[3]
-		day_object.dessert = current_order[4]
-		db.session.add(day_object)
-		db.session.commit()
+	now = datetime.datetime.utcnow()
+	day_of_week = now.weekday()
+	hour = now.time().hour
+	if (day_of_week == 3 and hour > 22) or (day_of_week == 4 and hour < 19):
+		order = request.json['order']
+		my_week = current_user.week
+		my_week.num_people = order['numPeople'][0]
+		db.session.add(my_week)
+		for day in days_array_list:
+			day_object = Day.query.filter_by(user = current_user, day_of_week = days_array_reverse[day]).first()
+			current_order = order[day]
+			day_object.breakfast = current_order[0]
+			day_object.lunch = current_order[1]
+			day_object.dinner = current_order[2]
+			day_object.snacks = current_order[3]
+			day_object.dessert = current_order[4]
+			db.session.add(day_object)
+			db.session.commit()
 
-	return jsonify({
-		'status' : 1
-		})
+		return jsonify({
+			'status' : 1
+			})
+	else:
+		return jsonify({
+			'status' : 2,
+			'message' : 'You can only change orders between 5pm Thursday and 2pm Fridays EST. Please contact us to manually change your order'
+			})
 
 @users.route('/chefpage/', methods = ['GET'])
 @chef_required

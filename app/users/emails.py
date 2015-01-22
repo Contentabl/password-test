@@ -16,5 +16,5 @@ def send_all_emails():
 	users = User.query.all()
 	for user in users:
 		emails.append(user.email)
-	send_email("Meals to Heal for this week", MAIL_USERNAME, emails, 
+	send_email("Meals to Heal for this week", ("Meals to Heal" , "mealstoheal20@gmail.com"), emails, 
 		render_template('emails/weeklyemail.txt', url = SITE_URL), render_template('emails/weeklyemail.html', url = SITE_URL))	
