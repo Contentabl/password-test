@@ -48,33 +48,6 @@ body {
   margin-left: 15px;
   margin-right: 15px;
 }
-.menu:hover{
-  display:inline;
-  float: left;
-  position: relative;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.drop{
-  position:absolute;
-  background:#000;
-  margin:0;
-  padding:10px;
-  font-family: 'Exo 2', sans-serif;
-  color:#FFF;
-  visibility:hidden;
-}
-
-.menu:hover .drop{
-  position:absolute;
-  background:#000;
-  margin:0;
-  padding:10px;
-  font-family: 'Exo 2', sans-serif;
-  color:#FFF;
-  visibility:visible;
-}
 
 
 
