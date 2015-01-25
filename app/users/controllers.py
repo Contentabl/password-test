@@ -134,6 +134,11 @@ def dashboard():
 def gallery():
 	return render_template('index/gallery.html')
 
+@users.route('/gallery/flashmo_263_motion_flow.swf', methods=['GET'])
+def flashmo_263_motion_flow():
+	#return app.send_static_file('/static/js/flashmo_263_motion_flow.swf')
+	return send_from_directory('/static/js/', flashmo_263_motion_flow.swf)
+
 @users.route('/menu/', methods=['GET'])
 def menu():
 	return render_template('index/menu.html')

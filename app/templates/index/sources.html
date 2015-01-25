@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/touchTouch.css">
     <link rel="stylesheet" href="/static/css/owl.carousel.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/headerStyles.css">
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/jquery-migrate-1.1.1.js"></script>
     <script src="/static/js/jquery.easing.1.3.js"></script>
@@ -20,6 +21,7 @@
     <script src="/static/js/touchTouch.jquery.js"></script>
     <script src="/static/js/TMForm.js"></script>
     <script src="/static/js/modal.js"></script>
+    <script src="/static/js/headerScript.js"></script>
 
     <script>
         $(window).load(function(){
@@ -41,7 +43,7 @@
 
     <!-- Fonts -->
     <!-- Bitter -->
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <!-- Slabo -->
     <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <!-- Droid -->
@@ -70,22 +72,48 @@
 <header>
     <div class="navigation">
         <div class="container_12">
-            <div class="grid_12">
+            <!-- <div class="menu"> -->
+                <div id='cssmenu'>
                 <h1 class="logo">
                     <a href="/"><img src="/static/images/logo.png" alt="">
                     </a>
                 </h1>
-                <nav>
-                    <ul>
+                <br>
+                <br>
+                <ul>
+                   <li style="width: 25%"><a href="/users/service/">what we offer</a></li>
+                   <li class='active' style="width: 19%"><a href='/users/menu/'>menu</a>
+                        <ul>
+                             <li><a href='#'>current sample menu</a></li>
+                             <li><a href='#'>what we're cooking</a></li>
+                        </ul>
+                    </li>
+                    <li style="width: 19%"><a href="/users/sources/">sources</a></li>
+                    <li style="width: 18%"><a href='/users/about/'>our story</a>
+                        <ul>
+                            <li><a href='/users/contact/'>contact us</a></li>
+                        </ul>
+                    </li>
+                    <li style="width: 19%"><a href="/users/auth/">get started</a></li>
+                </ul>
+
+                  <!--   <ul>
                         <li><a href="/users/service/">what we offer</a></li>
-                        <li><a href="/users/menu/">menu</a></li>
+                        <li class='active'><a href='#'>menu</a>
+                          <ul>
+                             <li><a href='#'>current sample menu</a></li>
+                             <li><a href='#'>what we're cooking</a></li>
+                          </u>
+                        </li>
                         <li><a href="/users/sources/">sources</a></li>
-                        <li><a href="/users/about/">about us</a></li>
-                        <li><a href="/users/contact/">contact us</a></li>
+                        <li><select>
+                          <option><a href="/users/about/">about us</a></option>
+                          <option><a href=".">contact us</a></option>
+                       </select>
                         <li><a href="/users/auth/">get started</a></li>
-                    </ul>
-                </nav>
+                    </ul> -->
             </div>
+            <!-- </div> -->
         </div>
     </div>
 </header>
