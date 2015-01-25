@@ -70,7 +70,7 @@
 <header>
     <div class="navigation">
         <div class="container_12">
-            <div class="grid_12">
+            <div class="menu">
                 <h1 class="logo">
                     <a href="/"><img src="/static/images/logo.png" alt="">
                     </a>
@@ -78,17 +78,24 @@
                 <nav>
                     <ul>
                         <li><a href="/users/service/">what we offer</a></li>
-                        <li><a href="/users/menu/">menu</a>
-                        <ul>
-                        <li><a href=".">current sample menu</a></li>
-                        <li><a href=".">what we're cooking</a></li>
-                    </ul>
+
+   
+                        <li><!-- <select>
+      <option><a href="/users/menu/">menu</a></option>
+      <option><a href=".">current sample menu</a></option>
+      <option><a href=".">what we're cooking</a></option>
+   </select> -->
+   <nav class="drop">
+    <li>Home</li>
+    <li>Time</li>
+    <li>Contact</li>
+  </nav>
                 </li>
                         <li><a href="/users/sources/">sources</a></li>
-                        <li><a href="/users/about/">about us</a></li>
-                        <ul>
-                        <li><a href=".">contact us</a></li>
-                    </ul>
+                        <li><select>
+      <option><a href="/users/about/">about us</a></option>
+      <option><a href=".">contact us</a></option>
+   </select>
                         <li><a href="/users/contact/">contact us</a></li>
                         <li><a href="/users/auth/">get started</a></li>
                     </ul>

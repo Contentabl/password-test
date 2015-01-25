@@ -130,6 +130,10 @@ def auth():
 def dashboard():
 	return render_template('dashboard/profile_page.html')
 
+@users.route('/gallery/', methods=['GET'])
+def gallery():
+	return render_template('index/gallery.html')
+
 @users.route('/menu/', methods=['GET'])
 def menu():
 	return render_template('index/menu.html')
