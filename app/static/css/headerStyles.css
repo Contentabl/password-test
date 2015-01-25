@@ -49,13 +49,15 @@
   float: right;
 }
 #cssmenu > ul > li > a {
+  width:100%;
   display: inline;
-  padding: 17px;
+  padding: 15px 30px;
   font-size: 18px;
   letter-spacing: 1px;
   text-decoration: none;
   color: #dddddd;
   font-weight: 700;
+  font: 300 normal 24px/36px 'Bitter', serif;
 }
 #cssmenu > ul > li:hover > a {
   color: #ffffff;
@@ -72,6 +74,7 @@
   display: block;
   background: #dddddd;
   content: '';
+  font: 300 normal 24px/36px 'Bitter', serif;
 }
 #cssmenu > ul > li.has-sub > a:before {
   position: absolute;
