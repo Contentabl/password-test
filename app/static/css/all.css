@@ -349,3 +349,9 @@ a:hover {
 	color: #6a6a6a;
 	line-height: 15px;
 }
+.pp_details{
+	display: none;
+}
+.pp_expand{
+	display: none !important;
+}
