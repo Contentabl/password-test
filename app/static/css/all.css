@@ -242,7 +242,7 @@ a:hover {
 
 /* Thumbnail Gallery Content*/
 #right {
-	width: 758px;
+	/*width: 758px;*/
 	/*float: right;*/
 }
 #right .thumbnails {
