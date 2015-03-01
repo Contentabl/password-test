@@ -1,111 +1,46 @@
-<html lang="en"><head>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="/static/images/favicon.ico">
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="/static/css/contact-form.css">
-    <link rel="stylesheet" href="/static/css/touchTouch.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/headerStyles.css">
-    <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/jquery-migrate-1.1.1.js"></script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="/static/js/script.js"></script>
-    <script src="/static/js/superfish.js"></script>
-    <script src="/static/js/jquery.equalheights.js"></script>
-    <script src="/static/js/jquery.mobilemenu.js"></script>
-    <script src="/static/js/jquery.ui.totop.js"></script>
-    <script src="/static/js/owl.carousel.js"></script>
-    <script src="/static/js/touchTouch.jquery.js"></script>
-    <script src="/static/js/TMForm.js"></script>
-    <script src="/static/js/modal.js"></script>
-    <script src="/static/js/headerScript.js"></script>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
 
-    <script>
-        $(window).load(function(){
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-            $("#owl").owlCarousel({
-                items : 4, //10 items above 1000px browser width
-                itemsDesktop : [995,1], //5 items between 1000px and 901px
-                itemsDesktopSmall : [767, 1], // betweem 900px and 601px
-                itemsTablet: [700, 1], //2 items between 600 and 0
-                itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
-                navigation : true,
-                pagination :  false
-            });
-            $('.gallery .gall_item').touchTouch();
-        });
-
-    </script>
-
-    <!-- Fonts -->
-    <!-- Bitter -->
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-    <!-- Slabo -->
-    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    <!-- Droid -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-    <!-- End Fonts -->
-
-
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" media="screen" href="css/ie.css">
-    <![endif]-->
+  <link rel="stylesheet" href="/static/css/reset.css">
+ <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/new.css">
+  <script src="/static/js/jquery.js"></script>
 </head>
 
-<body style="background-color:#000000">
+<body>
 <!--==============================
               header
 =================================-->
-<center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>   
-        <ul style="float:left; padding-left:20%; text-align:left;">
-            <li><a href="/users/service/">what we offer</a></li>
-            <li><a href="/users/menu/">menu</a></li>
-
-            <li><a href="/users/sources/">sources</a></li>
-            <!--li><a href="/users/gallery/">photos</a></li-->
-        </ul>
-        <a style="float:left; width:42%;" href="/"><img src="/static/images/logo.png" alt="">
-        </a>
-        <ul style="float:left; padding-right:15%; text-align:left;">
-            <li><a href="/users/about/">our story</a></li>
-            <li><a href="/users/contact/">contact us</a></li>
-            <li><a href="/users/auth/">get started</a></li>
-        </ul>
-    </div>
-</center>
+<div class="bHeader">
+  <div class="container">
+    <a class="bHeader__logo" href="/"></a>
+    <a class="bHeader__navItem"></a>
+    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
+    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
+    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
+    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
+    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
+    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+  </div>
+</div>
 <!--=====================
           Content
 ======================-->
-<center>
-<section id="about" class="page page_bg__1" style="background-color:#000000">
-    <div class="about_bg__1" style="background-color:#000000">
-        <div class="container_12" style="background-color:#000000">
-            <div class="grid_12" style="background-color:#000000">
-                    <h3 class="head__1" style="color:#FFF8F0; text-align:left;"></h3>
-                    <div class="fwn" style="color:#FFF8F0; width:60%; text-align:left"><p>We're Meals to Heal, a Brooklyn-based food company. We cook seasonal, high-nutrient food for New Yorkers with special diets. Our food helps you support a lifestyle that keeps you happy, healthy and well-fed.</p>
-            </div>
-            <div class="clear"></div>
-        </div>
+<article class="pIndex">
+  <section class="bSplash">
+    <div class="bSplash__background"></div>
+    <div class="bSplash__overlay"></div>
+    <div class="bSplash__content">
+      <h1 class="bSplash__header">meals <span class="font-w-bold">to heal</span></h1>
+      <h2 class="bSplash__subheader">a <span class="font-w-bold">brooklyn-based</span> food company.</h2>
+      <a href="/users/auth">
+        <button class="btn_pill btn_white">Get started</button>
+      </a>
     </div>
-</section>
-</center
+  </section>
+</article>
 <!--==============================
               footer
 =================================-->

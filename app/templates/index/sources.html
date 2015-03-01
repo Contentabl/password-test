@@ -1,126 +1,77 @@
-<html lang="en"><head>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="/static/images/favicon.ico">
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="/static/css/contact-form.css">
-    <link rel="stylesheet" href="/static/css/touchTouch.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/headerStyles.css">
-    <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/jquery-migrate-1.1.1.js"></script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="/static/js/script.js"></script>
-    <script src="/static/js/superfish.js"></script>
-    <script src="/static/js/jquery.equalheights.js"></script>
-    <script src="/static/js/jquery.mobilemenu.js"></script>
-    <script src="/static/js/jquery.ui.totop.js"></script>
-    <script src="/static/js/owl.carousel.js"></script>
-    <script src="/static/js/touchTouch.jquery.js"></script>
-    <script src="/static/js/TMForm.js"></script>
-    <script src="/static/js/modal.js"></script>
-    <script src="/static/js/headerScript.js"></script>
+<html lang="en">
+<head>
+  <title>Sources</title>
+  <meta charset="utf-8">
 
-    <script>
-        $(window).load(function(){
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-            $("#owl").owlCarousel({
-                items : 4, //10 items above 1000px browser width
-                itemsDesktop : [995,1], //5 items between 1000px and 901px
-                itemsDesktopSmall : [767, 1], // betweem 900px and 601px
-                itemsTablet: [700, 1], //2 items between 600 and 0
-                itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
-                navigation : true,
-                pagination :  false
-            });
-            $('.gallery .gall_item').touchTouch();
-        });
-
-    </script>
-
-    <!-- Fonts -->
-    <!-- Bitter -->
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-    <!-- Slabo -->
-    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    <!-- Droid -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-    <!-- End Fonts -->
-
-
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" media="screen" href="css/ie.css">
-    <![endif]-->
+  <link rel="stylesheet" href="/static/css/reset.css">
+ <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/new.css">
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/index.js"></script>
 </head>
 
-<body style="background-color:#000000">
+<body>
 <!--==============================
               header
 =================================-->
-<div class="menu_bg"></div>
-<header>
-    <div class="navigation">
-        <div class="container_12">
-            <!-- <div class="menu"> -->
-                <div id='cssmenu'>
-                <h1 class="logo">
-                    <a href="/"><img src="/static/images/logo.png" alt="">
-                    </a>
-                </h1>
-                <br>
-                <br>
-                <ul>
-                   <li style="width: 25%"><a href="/users/service/">what we offer</a></li>
-                   <li class='active' style="width: 19%"><a href='/users/menu/'>menu</a>
-                        <ul>
-                             <li><a href='/users/menu/'>current sample menu</a></li>
-                             <li><a href='/users/gallery/'>what we're cooking</a></li>
-                        </ul>
-                    </li>
-                    <li style="width: 19%"><a href="/users/sources/">sources</a></li>
-                    <li class='active' style="width: 18%"><a href='/users/about/'>about us</a>
-                        <ul>
-                             <li><a href='/users/about/'>our story</a></li>
-                             <li><a href='/users/contact/'>contact us</a></li>
-                        </ul>
-                    <li style="width: 19%"><a href="/users/auth/">get started</a></li>
-                </ul>
-
-                  <!--   <ul>
-                        <li><a href="/users/service/">what we offer</a></li>
-                        <li class='active'><a href='#'>menu</a>
-                          <ul>
-                             <li><a href='#'>current sample menu</a></li>
-                             <li><a href='#'>what we're cooking</a></li>
-                          </u>
-                        </li>
-                        <li><a href="/users/sources/">sources</a></li>
-                        <li><select>
-                          <option><a href="/users/about/">about us</a></option>
-                          <option><a href=".">contact us</a></option>
-                       </select>
-                        <li><a href="/users/auth/">get started</a></li>
-                    </ul> -->
-            </div>
-            <!-- </div> -->
-        </div>
-    </div>
-</header>
+<div class="bHeader">
+  <div class="container">
+    <a class="bHeader__logo" href="/"></a>
+    <a class="bHeader__navItem"></a>
+    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
+    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
+    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
+    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
+    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
+    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+  </div>
+</div>
 <!--=====================
           Content
 ======================-->
-<section id="services" class="page page_bg__1" style="background-color:#000000">
+
+<article class="pSources">
+   <section class="bSplash">
+    <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
+    <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
+    <div class="bSplash__content" data-stellar-ratio="0.5">
+      <h1 class="bSplash__header">Our <span class="font-w-bold">sources</span></h1>
+    </div>
+  </section>
+
+  <section class="bContent__section clearfix">
+    <div class="container">
+      <h1 class="bContent__h">We're big fans of local farms &amp; butcher shops</h1>
+      <h2 class="bContent__h2 margin-v-3">Here are a few we frequently source from:</h2>
+      <div class="bContent__half">
+        <li>The Meat Hook</li>
+        <li>Fleisher's Pastured Meats&nbsp;</li>
+        <li>Arcadian Pastures</li>
+        <li>Migliorelli Farms</li>
+        <li>Fishkill Farms</li>
+        <li>Kernan Farms</li>
+        <li>Whole Foods Market</li>
+        <li>Foxy Farms</li>
+        <li>Sahadi's</li>
+      </div>
+
+      <div class="bContent__half">
+        <li>S &amp; SO Farms</li>
+        <li>Van Houten Farmss</li>
+        <li>Quattro's Game Farm &amp; Store</li>
+        <li>Paffenroth Gardens</li>
+        <li>Rogowski Farms</li>
+        <li>Phillips Farms</li>
+        <li>Los Paisanos Meat Market</li>
+        <li>Udder Milk Creamery</li>
+        <li>Union Market</li>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- <section id="services" class="page page_bg__1" style="background-color:#000000">
     <div class="about_bg__1" style="background-color:#000000">
         <div class="container_12" style="background-color:#000000">
             <div class="grid_12" style="background-color:#000000">
@@ -137,7 +88,7 @@
                         <li>Whole Foods Market</li>
                         <li>Foxy Farms</li>
                         <li>Sahadi's</li>
-                     </ul>   
+                     </ul>
                      <ul style="font-style:normal; width:49%; display: inline-block; zoom:1; *display: inline; color:#F0F7FF">
                         <li>S &amp; SO Farms</li>
                         <li>Van Houten Farmss</li>
@@ -149,11 +100,11 @@
                         <li>Udder Milk Creamery</li>
                         <li>Union Market</li>
                     </ul>
-            </div>      
+            </div>
             <div class="clear"></div>
         </div>
     </div>
-</section>
+</section> -->
 <!--==============================
               footer
 =================================-->

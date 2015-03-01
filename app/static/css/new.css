@@ -1,0 +1,313 @@
+html {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.font-w-bold {
+  font-weight: 600;
+}
+
+.font-s-italic {
+  font-style: italic;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bContent__section {
+  padding: 4rem 0;
+  z-index: 777;
+}
+
+.bContent__section_alt {
+  background: #F7F7F8;
+}
+
+.bContent__h {
+  font-size: 50px;
+}
+
+.bContent__h2 {
+  font-size: 37px;
+}
+
+.bContent__p {
+  font-size: 21px;
+  margin: 2rem 0;
+  line-height: 1.5
+}
+
+.bHeader {
+  height: 60px;
+  background: transparent;
+  color: #fff;
+  font-family: "Helvetica Neue";
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  transition: background-color, 0.5s ease;
+}
+
+.bHeader.opaq {
+  background: rgba(255,255,255,0.95);
+  color: #000;
+  border-bottom: 2px solid #7f7f7f;
+}
+
+.bHeader__logo {
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  height: 32px;
+  width: 164px;
+  float: left;
+  margin: 16px 0;
+}
+
+.bHeader__navItem {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  line-height: 58px;
+}
+
+.bHeader__navItem:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.bHeader__navItem.opaq {
+  color: #000;
+}
+
+.bHeader__navItem.opaq:hover {
+  border-bottom: 2px solid #000;
+}
+
+.pIndex .bSplash__background {
+  background-image: url(../../static/images/8.jpg);
+}
+
+.pSources .bSplash__background {
+  background-image: url(../../static/images/7.jpg);
+}
+
+.pAbout .bSplash__background {
+  background-image: url(../../static/images/girl.jpeg);
+}
+
+.pService .bSplash__background {
+  background-image: url(../../static/images/6.jpg);
+}
+
+.pLogin .bSplash__background {
+  background-image: url(../../static/images/6.jpg);
+}
+
+.pMenu .bSplash__background {
+  background-image: url(../../static/images/5.jpg);
+}
+
+.pContact .bSplash__background {
+  background-image: url(http://newyorknatives.com/wp-content/uploads/2013/07/Williamsburg-bridge.jpg);
+}
+
+.bSplash {
+  position: relative;
+}
+
+.bSplash__background {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.bSplash__content {
+  position: absolute;
+  top: 33.3333333333%;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: 100;
+  letter-spacing: 12.0;
+  text-transform: uppercase;
+  z-index: 666;
+}
+
+.bSplash__overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 666;
+}
+
+.bSplash__header {
+  font-size: 83px;
+}
+
+.bSplash__subheader {
+  font-size: 28px;
+  margin: 2rem 0;
+}
+
+.pIndex__aboutP {
+  text-align: center;
+  color: black;
+}
+
+.pMenu__item {
+  margin-top: 3rem;
+}
+
+.btn_pill {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  padding: .8em 2.4em .6em;
+  border-radius: 10em;
+  background: transparent;
+  outline: none;
+  transition: background, 0.5s ease;
+}
+
+.btn_white {
+  color: #FFF;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn_white:hover {
+  background: #fff;
+  color: #1a9ff2;
+}
+
+.btn_blue {
+  color: #fff;
+  background-color: #1A9FF2;
+  border: 1px solid #1A9FF2;
+}
+
+.bContent__half {
+  width: 50%;
+  float: left;
+}
+
+.bContent__half li {
+  margin: 1rem 0;
+  font-size: 21px;
+}
+
+.bContent__input {
+  font-size: 21px;
+  /*line-height: 6rem;*/
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  -moz-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  border-radius: 0.66667rem;
+  border: 2px solid transparent;
+  color: #fff;
+  background: rgba(192,192,192,0.5);
+  float: left;
+  /*height: 8rem;*/
+  outline: none;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #fff;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;
+}
+
+:-ms-input-placeholder {
+   color: #fff;
+}
+
+.margin-v-1 {
+  margin: 1rem 0;
+}
+
+.margin-v-2 {
+  margin: 2rem 0;
+}
+
+.margin-v-3 {
+  margin: 3rem 0;
+}
+
+.margin-v-4 {
+  margin: 4rem 0;
+}
+
+.margin-v-5 {
+  margin: 5rem 0;
+}
+
+.pLogin__container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pContact__map {
+  width: 100%;
+  height: 20rem;
+}
+
+.pProfile {
+  margin-top: 60px;
+}
+
+/* Contact Form Error messages
+========================================================*/
+#contact-form .empty-message,
+#contact-form .error-message {
+  position: absolute;
+  right: 3px;
+  top: -18px;
+  color: red;
+  height: 0;
+  overflow: hidden;
+  font-size: 11px;
+  -webkit-transition: 0.3s ease-in height;
+  transition: 0.3s ease-in height;
+  z-index: 99;
+}
+#contact-form .invalid .error-message,
+#contact-form .empty .empty-message {
+  height: 20px;
+}

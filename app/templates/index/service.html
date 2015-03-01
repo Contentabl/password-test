@@ -1,203 +1,102 @@
-<html lang="en"><head>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="/static/images/favicon.ico">
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="/static/css/contact-form.css">
-    <link rel="stylesheet" href="/static/css/touchTouch.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/headerStyles.css">
-    <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/jquery-migrate-1.1.1.js"></script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="/static/js/script.js"></script>
-    <script src="/static/js/superfish.js"></script>
-    <script src="/static/js/jquery.equalheights.js"></script>
-    <script src="/static/js/jquery.mobilemenu.js"></script>
-    <script src="/static/js/jquery.ui.totop.js"></script>
-    <script src="/static/js/owl.carousel.js"></script>
-    <script src="/static/js/touchTouch.jquery.js"></script>
-    <script src="/static/js/TMForm.js"></script>
-    <script src="/static/js/modal.js"></script>
-    <script src="/static/js/headerScript.js"></script>
+<html lang="en">
+<head>
+  <title>What We Offer</title>
+  <meta charset="utf-8">
 
-    <script>
-        $(window).load(function(){
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-            $("#owl").owlCarousel({
-                items : 4, //10 items above 1000px browser width
-                itemsDesktop : [995,1], //5 items between 1000px and 901px
-                itemsDesktopSmall : [767, 1], // betweem 900px and 601px
-                itemsTablet: [700, 1], //2 items between 600 and 0
-                itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
-                navigation : true,
-                pagination :  false
-            });
-            $('.gallery .gall_item').touchTouch();
-        });
-
-    </script>
-
-    <!-- Fonts -->
-    <!-- Bitter -->
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-    <!-- Slabo -->
-    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    <!-- Droid -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-    <!-- End Fonts -->
-
-
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" media="screen" href="css/ie.css">
-    <![endif]-->
+  <link rel="stylesheet" href="/static/css/reset.css">
+ <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/new.css">
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/index.js"></script>
 </head>
 
-<body style="background-color:#000000">
+<body>
 <!--==============================
               header
 =================================-->
-<div class="menu_bg"></div>
-<header>
-    <div class="navigation">
-        <div class="container_12">
-            <!-- <div class="menu"> -->
-                <div id='cssmenu'>
-                <h1 class="logo">
-                    <a href="/"><img src="/static/images/logo.png" alt="">
-                    </a>
-                </h1>
-                <br>
-                <br>
-                <ul>
-                   <li style="width: 25%"><a href="/users/service/">what we offer</a></li>
-                   <li class='active' style="width: 19%"><a href='/users/menu/'>menu</a>
-                        <ul>
-                             <li><a href='/users/menu/'>current sample menu</a></li>
-                             <li><a href='/users/gallery/'>what we're cooking</a></li>
-                        </ul>
-                    </li>
-                    <li style="width: 19%"><a href="/users/sources/">sources</a></li>
-                    <li class='active' style="width: 18%"><a href='/users/about/'>about us</a>
-                        <ul>
-                             <li><a href='/users/about/'>our story</a></li>
-                             <li><a href='/users/contact/'>contact us</a></li>
-                        </ul>
-                    <li style="width: 19%"><a href="/users/auth/">get started</a></li>
-                </ul>
-
-                  <!--   <ul>
-                        <li><a href="/users/service/">what we offer</a></li>
-                        <li class='active'><a href='#'>menu</a>
-                          <ul>
-                             <li><a href='#'>current sample menu</a></li>
-                             <li><a href='#'>what we're cooking</a></li>
-                          </u>
-                        </li>
-                        <li><a href="/users/sources/">sources</a></li>
-                        <li><select>
-                          <option><a href="/users/about/">about us</a></option>
-                          <option><a href=".">contact us</a></option>
-                       </select>
-                        <li><a href="/users/auth/">get started</a></li>
-                    </ul> -->
-            </div>
-            <!-- </div> -->
-        </div>
-    </div>
-</header>
+<div class="bHeader">
+  <div class="container">
+    <a class="bHeader__logo" href="/"></a>
+    <a class="bHeader__navItem"></a>
+    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
+    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
+    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
+    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
+    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
+    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+  </div>
+</div>
 <!--=====================
           Content
 ======================-->
-<section id="services" class="page" style="background-color:#000000">
-    <div class="container_12" style="background-color:#000000">
-        <div class="grid_12" style="background-color:#000000; color:#F0F7FF">
-            <h3 style="color:#F0F7FF; text-align:left;"></h3>
-        </div>
-        <p style="color:black; font-style:normal; font-weight: bold; font-size:32px; color:#F0F7FF">meals</p>
-        <p style="font-style:normal; color:#F0F7FF">We offer highly-customizable, consciously-sourced,
-            nutrient-dense meals based on your personal preferences and dietary needs. Some diets I have experience cooking for:</p>
-        <center>
-        <ul style="list-style: disc; font-style:normal; text-align:left; width:45%; display: inline-block; zoom:1; *display: inline; color:#F0F7FF">
-            <li>the Selective Carbohydrate Diet</li>
-            <li>Paleo&nbsp;</li>
-            <li>Primal/Weston A. Price's Nourishing Traditions</li>
-            <li>Ketogenic/ High-Fat, Low-Carbohydrate</li>
-            <li>Hypoallergenic</li>
-            <li>Low/No-FODMAPs</li>
-            <li>Autoimmune Paleo/Wahls Protocol</li>
-            <li>Vegetarian</li>
-            <li>Dukan Diet</li>
-            <li>Atkins Diet</li>
-            <li>SIBO Diet</li>
-            <li>Slow Carb/4 Hr Body Diet</li>
-            <li>Weight Loss</li>
-        </ul>
-        <ul style="list-style: disc; font-style:normal; text-align:left; width:45%; display: inline-block; zoom:1; *display: inline; color:#F0F7FF">
-            <li>Whole 30</li>
-            <li>GAPS&nbsp;</li>
-            <li>21 Day Sugar Detox</li>
-            <li>Gluten-Free</li>
-            <li>Dairy Free</li>
-            <li>Allergy-Free (Top 8)</li>
-            <li>Vegan</li>
-            <li>Specific Carbohydrate Diet</li>
-            <li>Alkaline Diet</li>
-            <li>Clean Eating</li>
-            <li>Low-Glycemic</li>
-            <li>Salicylate-Free</li>
-            <li>And more, inquire for further information.</li>
-        </ul>
-        <br>
-        <br>
-        </center>
-        <p style="color:black; font-style:normal; font-weight: bold; font-size:32px; color:#F0F7FF">nutritional consulting</p>
-        <p style="font-style:normal; color:#F0F7FF">So, you've just been diagnosed with a health condition...</p>
-        <p style="font-style:normal; color:#F0F7FF">...and you're totally overwhelmed. All the things you could
-            eat before are off-limits. What do you do? You call us. Get a chef's perspective on how to navigate the
-            grocery store, the kitchen, the farmer's market. We talk, we look through your kitchen. We shop for food.
-            I leave you empowered, with a fridge full of food that's safe for you to eat.  And you'll even get a week
-            of unlimited e-mail support after your consultation. You can even combine your consultation with cooking
-            lessons, so that you feel ready to take on your new lifestyle head-on where it counts: the kitchen. </p>
-        <p style="font-style:normal; color:black; font-style:normal; font-weight: bold; font-size:32px; color:#F0F7FF">special occasions and special requests</p>
-        <p style="font-style:normal; color:#F0F7FF">We are able to take on a very limited number of special requests,
-            but if you need an autoimmune-friendly holiday meal, paleo truffles for a significant other's birthday, or
-            perhaps an allergy-free engagement dinner for just you and your honey... we might just be able to help you
-            out. Don't hesitate; no request goes unconsidered!</p>
 
-        <!--
-        <div class="grid_9">
-            <div class="serv_links">
-                <a href="#" class="serv"><span>Web</span></a>
-                <a href="#" class="serv"><span>Development</span></a>
-                <a href="#" class="serv"><span>SEO</span></a>
-                <a href="#" class="serv"><span>SEM</span></a>
-                <a href="#" class="serv"><span>Graphic</span></a>
-                <a href="#" class="serv"><span>Ideas</span></a>
-                <a href="#" class="serv"><span>Management</span></a>
-                <a href="#" class="serv"><span>Planning</span></a>
-            </div>
-        </div>
-        <div class="grid_3 fwn">
-            <div class="text1">Say what you need and we’ll do it for you!</div>
-            Read about this <strong><a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow">free theme</a></strong> on our official blog. <br> To find the whole collection of <strong><a href="http://www.templatemonster.com/properties/topic/design-photography/" rel="nofollow">templates for design companies</a></strong>, visit TemplateMonster.com <br>
-            <a href="#" class="btn">read more</a>
-        </div>
-        -->
-        <div class="clear" style="background-color:#708090"></div>
+<article class="pService">
+  <section class="bSplash">
+    <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
+    <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
+    <div class="bSplash__content" data-stellar-ratio="0.5">
+      <h1 class="bSplash__header">What <span class="font-w-bold">We Offer</span></h1>
     </div>
-</section>
+  </section>
+
+  <section class="bContent__section clearfix">
+    <div class="container">
+      <h1 class="bContent__h">We offer highly-customizable meals based on your personal preferences and dietary needs.</h1>
+      <h2 class="bContent__h2 margin-v-3">Some diets I have experience cooking for:</h2>
+
+      <div class="bContent__half">
+        <li>the Selective Carbohydrate Diet</li>
+        <li>Paleo&nbsp;</li>
+        <li>Primal/Weston A. Price's Nourishing Traditions</li>
+        <li>Ketogenic/ High-Fat, Low-Carbohydrate</li>
+        <li>Hypoallergenic</li>
+        <li>Low/No-FODMAPs</li>
+        <li>Autoimmune Paleo/Wahls Protocol</li>
+        <li>Vegetarian</li>
+        <li>Dukan Diet</li>
+        <li>Atkins Diet</li>
+        <li>SIBO Diet</li>
+        <li>Slow Carb/4 Hr Body Diet</li>
+        <li>Weight Loss</li>
+      </div>
+
+      <div class="bContent__half">
+        <li>Whole 30</li>
+        <li>GAPS&nbsp;</li>
+        <li>21 Day Sugar Detox</li>
+        <li>Gluten-Free</li>
+        <li>Dairy Free</li>
+        <li>Allergy-Free (Top 8)</li>
+        <li>Vegan</li>
+        <li>Specific Carbohydrate Diet</li>
+        <li>Alkaline Diet</li>
+        <li>Clean Eating</li>
+        <li>Low-Glycemic</li>
+        <li>Salicylate-Free</li>
+        <li>And more, inquire for further information.</li>
+      </div>
+    </div>
+  </section>
+
+  <section class="bContent__section bContent__section_alt">
+    <div class="container">
+      <h1 class="bContent__h">Nutritional Consulting</h1>
+      <p class="bContent__p">
+        So, you've just been diagnosed with a health condition and you're totally overwhelmed. All the things you could eat before are off-limits. What do you do? You call us. Get a chef's perspective on how to navigate the grocery store, the kitchen, the farmer's market. We talk, we look through your kitchen. We shop for food.I leave you empowered, with a fridge full of food that's safe for you to eat.  And you'll even get a week of unlimited e-mail support after your consultation. You can even combine your consultation with cooking lessons, so that you feel ready to take on your new lifestyle head-on where it counts: the kitchen.
+      </p>
+    </div>
+  </section>
+
+  <section class="bContent__section">
+    <div class="container">
+      <h1 class="bContent__h">Special Occasions and Requests</h1>
+      <p class="bContent__p">
+        We are able to take on a very limited number of special requests, but if you need an autoimmune-friendly holiday meal, paleo truffles for a significant other's birthday, or perhaps an allergy-free engagement dinner for just you and your honey... we might just be able to help you out. Don't hesitate; no request goes unconsidered!
+      </p>
+    </div>
+  </section>
+</article>
 <!--==============================
               footer
 =================================-->
