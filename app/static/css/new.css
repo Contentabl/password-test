@@ -3,6 +3,16 @@ html {
   font-weight: 300;
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -42,15 +52,15 @@ html {
 }
 
 .bContent__h {
-  font-size: 50px;
+  font-size: 36px;
 }
 
 .bContent__h2 {
-  font-size: 37px;
+  font-size: 24px;
 }
 
 .bContent__p {
-  font-size: 21px;
+  font-size: 16px;
   margin: 2rem 0;
   line-height: 1.5
 }
@@ -225,37 +235,62 @@ html {
 }
 
 .bContent__input {
-  font-size: 21px;
+  font-size: 16px;
   /*line-height: 6rem;*/
   -webkit-transition: border-color 0.3s, color 0.3s;
   -moz-transition: border-color 0.3s, color 0.3s;
   transition: border-color 0.3s, color 0.3s;
   border-radius: 0.66667rem;
   border: 2px solid transparent;
-  color: #fff;
-  background: rgba(192,192,192,0.5);
+  color: #000;
+  background: #fff;
   float: left;
   /*height: 8rem;*/
   outline: none;
-  padding: 1rem 2rem;
+  padding: 1rem;
   width: 100%;
   margin: 1rem 0;
 }
 
-::-webkit-input-placeholder {
-   color: #fff;
+.bContent__input-dashboard {
+  font-size: 16px;
+  width: 300px;
+  /*line-height: 6rem;*/
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  -moz-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  border-radius: 0.66667rem;
+  border: 2px solid #000;
+  color: #000;
+  /*background: rgba(192,192,192,0.5);*/
+  /*float: left;*/
+  /*height: 8rem;*/
+  outline: none;
+  padding: 1rem;
+  /*width: 100%;*/
+  margin: 1rem 0;
+  display: block;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: #fff;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #fff;
-}
-
-:-ms-input-placeholder {
-   color: #fff;
+.bContent__textarea {
+  font-size: 16px;
+  height: 300px;
+  width: 300px;
+  /*line-height: 6rem;*/
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  -moz-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  border-radius: 0.66667rem;
+  border: 2px solid #000;
+  color: #000;
+  /*background: rgba(192,192,192,0.5);*/
+  /*float: left;*/
+  /*height: 8rem;*/
+  outline: none;
+  padding: 1rem;
+  /*width: 100%;*/
+  margin: 1rem 0;
+  display: block;
 }
 
 .margin-v-1 {
@@ -290,6 +325,59 @@ html {
 
 .pProfile {
   margin-top: 60px;
+}
+
+.pProfile__info {
+  float: left;
+  width: 300px;
+}
+
+.pProfile__diets {
+  float: left;
+  font-size: 16px;
+  margin-left: 25%;
+}
+
+.pProfile__diets input {
+  margin: 0.5rem 0;
+}
+
+.pProfile__diets input:first-of-type {
+  margin-top: 1rem;
+}
+
+.pProfile__update {
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: #fff;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.pProfile__update-order {
+  width: 25%;
+  margin-top: 2rem;
+}
+
+.pProfile__customerCount li {
+  display: inline-block;
+}
+
+.gfield_radio li, .customOrder li {
+  margin: 1rem 0;
+}
+
+.pProfile__day {
+  margin-left: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid #000;
+}
+
+.pProfile__day:first-of-type {
+  margin-left: 0;
 }
 
 /* Contact Form Error messages

@@ -75,11 +75,11 @@ $(window).load(function(){
 
                //console.log(msg)
                });
-    
+
 });
 
 $(document).ready(function(){
-    
+
 });
 
 function selectDietRestrictions(diets){
@@ -91,30 +91,30 @@ function selectDietRestrictions(diets){
 function setBoxes(info){
     if (info["name"] != null && info["name"] != ""){
         nameBox.attr("value", info["name"]);
-        nameBox.attr("style", "background-color: #D3D3D3");
+        // nameBox.attr("style", "background-color: #D3D3D3");
         nameBox.attr("placeholder", "Name");
         nameBox.keyup(function () {
-            nameBox.attr("style", "background-color: #FFFFFF"); 
+            nameBox.attr("style", "background-color: #FFFFFF");
         });
     }
     else
         nameBox.attr("placeholder", "Name");
    if (info["email"] != null && info["email"] != ""){
-        emailBox.attr("value", info["email"]); 
-        emailBox.attr("style", "background-color: #D3D3D3");
+        emailBox.attr("value", info["email"]);
+        // emailBox.attr("style", "background-color: #D3D3D3");
         emailBox.attr("placeholder", "Email Address");
         emailBox.keyup(function () {
-            emailBox.attr("style", "background-color: #FFFFFF"); 
+            emailBox.attr("style", "background-color: #FFFFFF");
         });
     }
     else
         emailBox.attr("placeholder", "Email Address");
    if (info["phone"] != null && info["phone"] != ""){
         phoneBox.attr("value", info["phone"]);
-        phoneBox.attr("style", "background-color: #D3D3D3");
+        // phoneBox.attr("style", "background-color: #D3D3D3");
         phoneBox.attr("placeholder", "Phone Number");
         phoneBox.keyup(function () {
-            phoneBox.attr("style", "background-color: #FFFFFF"); 
+            phoneBox.attr("style", "background-color: #FFFFFF");
         });
     }
     else
@@ -131,17 +131,17 @@ function setBoxes(info){
         streetBox.attr("placeholder", "Street Address");
         stateBox.attr("placeholder", "City and State");
         zipBox.attr("placeholder", "Zip Code");
-        streetBox.attr("style", "background-color: #D3D3D3");
-        stateBox.attr("style", "background-color: #D3D3D3");
-        zipBox.attr("style", "background-color: #D3D3D3");
+        // streetBox.attr("style", "background-color: #D3D3D3");
+        // stateBox.attr("style", "background-color: #D3D3D3");
+        // zipBox.attr("style", "background-color: #D3D3D3");
         streetBox.keyup(function () {
-            streetBox.attr("style", "background-color: #FFFFFF"); 
+            streetBox.attr("style", "background-color: #FFFFFF");
         });
         stateBox.keyup(function () {
-            stateBox.attr("style", "background-color: #FFFFFF"); 
+            stateBox.attr("style", "background-color: #FFFFFF");
         });
         zipBox.keyup(function () {
-            zipBox.attr("style", "background-color: #FFFFFF"); 
+            zipBox.attr("style", "background-color: #FFFFFF");
         });
         noAddress = false;
     }
@@ -155,10 +155,10 @@ function setBoxes(info){
     var notes = info['notes'];
     if (notes != null && notes != ""){
         notesBox.attr("value", notes);
-        notesBox.attr("style", "background-color: #D3D3D3");
+        // notesBox.attr("style", "background-color: #D3D3D3");
         notesBox.attr("placeHolder", "Additional Comments:");
         notesBox.keyup(function () {
-            notesBox.attr("style", "background-color: #FFFFFF"); 
+            notesBox.attr("style", "background-color: #FFFFFF");
         });
     }
     else{
@@ -168,6 +168,7 @@ function setBoxes(info){
 function topOrderClicked(){
     $(".page").hide();
     $(".topLevel").show();
+    console.log("orders");
 }
 function profileClicked(){
     $(".page").show();
@@ -259,10 +260,10 @@ function submitOrders(){
        data: JSON.stringify({order: result})
        }).done(function( msg ) {
                if (msg['status'] == 2){
-                    alert(msg['message']); 
+                    alert(msg['message']);
                 }
 
-               
+
                });
 
 }
@@ -270,7 +271,7 @@ function updateProfile(){
 
     var newStreet = streetBox.val();
     var newState = stateBox.val();
-    var newZip = zipBox.val(); 
+    var newZip = zipBox.val();
     var notes = notesBox.val();
     var name = nameBox.val();
     var email = emailBox.val();
@@ -330,7 +331,7 @@ function updateProfile(){
                selectDietRestrictions(diets);
                //console.log(msg)
                });
-    
+
 }
 
 function logout(){
