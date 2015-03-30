@@ -2,28 +2,61 @@
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
-
-  <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
-  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+ <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
-
   <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
+  <script src="/static/js/index.js"></script>
   <script src="/static/js/login.js"></script>
 </head>
 
 <body>
+<!--==============================
+              header
+=================================-->
+<div class="bHeader">
+  <div class="container">
+    <a class="bHeader__logo" href="/"></a>
+    <a class="bHeader__navItem"></a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
+  </div>
+</div>
 
   <article class="pLogin">
     <section class="bSplash">
       <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
       <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
-      <div class="bSplash__content" data-stellar-ratio="0.5">
-        <h1 class="bSplash__header">Login <span class="font-w-bold">Signup</span></h1>
+      <div class="bSplash__content bSplash__content-login" data-stellar-ratio="0.5">
+        <!-- <h1 class="bSplash__header">Login <span class="font-w-bold">Signup</span></h1> -->
 
-        <div class="pLogin__container">
+        <div class="container pLogin__container">
           <div class="topButtons">
-            <button class="loginButton btn_pill btn_white pull-left" type="login" value="Login">Login</button>
-            <button class="signupButton btn_pill btn_white pull-right" type="signup" value="Sign Up">Sign Up</button>
+            <button class="btn loginButton" type="login" value="Login">login</button>
+            <button class="btn signupButton" type="signup" value="Sign Up">sign up</button>
           </div>
 
           <div class="login">
@@ -32,7 +65,7 @@
             </div>
             <input type="text" placeholder="email address" class="emailBox bContent__input"><br>
             <input type="password" placeholder="password" class="passwordBox bContent__input"><br>
-            <input class="submitButton btn_pill btn_blue" type="button" value="Submit">
+            <input class="submitButton btn" type="button" value="Submit">
           </div>
         </div>
       </div>

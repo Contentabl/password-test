@@ -2,12 +2,16 @@
 <head>
   <title>Sources</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
   <script src="/static/js/index.js"></script>
 </head>
 
@@ -19,12 +23,25 @@
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
     <a class="bHeader__navItem"></a>
-    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
   </div>
 </div>
 <!--=====================
@@ -36,14 +53,14 @@
     <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__content" data-stellar-ratio="0.5">
-      <h1 class="bSplash__header">Our <span class="font-w-bold">sources</span></h1>
+      <h1 class="bSplash__header">our <span class="font-w-bold">sources</span></h1>
     </div>
   </section>
 
   <section class="bContent__section clearfix">
     <div class="container">
-      <h1 class="bContent__h">We're big fans of local farms &amp; butcher shops</h1>
-      <h2 class="bContent__h2 margin-v-3">Here are a few we frequently source from:</h2>
+      <h1 class="bContent__h">we're big fans of local farms &amp; butcher shops</h1>
+      <h2 class="bContent__h2 margin-v-2">here are a few we frequently source from:</h2>
       <div class="bContent__half">
         <li>The Meat Hook</li>
         <li>Fleisher's Pastured Meats&nbsp;</li>
@@ -70,69 +87,6 @@
     </div>
   </section>
 </article>
-
-<!-- <section id="services" class="page page_bg__1" style="background-color:#000000">
-    <div class="about_bg__1" style="background-color:#000000">
-        <div class="container_12" style="background-color:#000000">
-            <div class="grid_12" style="background-color:#000000">
-                <h3 class="head__1" style="color:#FFFFFF; text-align:left;"></h3>
-                <p style="font-style:normal; color:#F0F7FF">We're big fans of local farms and butcher shops.
-                    Here are a few we frequently source from:</p>
-                    <ul style="font-style:normal; width:49%; display: inline-block; zoom:1; *display: inline; color:#F0F7FF">
-                        <li>The Meat Hook</li>
-                        <li>Fleisher's Pastured Meats&nbsp;</li>
-                        <li>Arcadian Pastures</li>
-                        <li>Migliorelli Farms</li>
-                        <li>Fishkill Farms</li>
-                        <li>Kernan Farms</li>
-                        <li>Whole Foods Market</li>
-                        <li>Foxy Farms</li>
-                        <li>Sahadi's</li>
-                     </ul>
-                     <ul style="font-style:normal; width:49%; display: inline-block; zoom:1; *display: inline; color:#F0F7FF">
-                        <li>S &amp; SO Farms</li>
-                        <li>Van Houten Farmss</li>
-                        <li>Quattro's Game Farm &amp; Store</li>
-                        <li>Paffenroth Gardens</li>
-                        <li>Rogowski Farms</li>
-                        <li>Phillips Farms</li>
-                        <li>Los Paisanos Meat Market</li>
-                        <li>Udder Milk Creamery</li>
-                        <li>Union Market</li>
-                    </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</section> -->
-<!--==============================
-              footer
-=================================-->
-
-<a href="#" id="toTop" class="fa fa-chevron-up"></a>
-<script src="/static/js/jquery.singlePageNav.min.js"></script>
-<script>
-
-    // Prevent console.log from generating errors in IE for the purposes of the demo
-    if ( ! window.console ) console = { log: function(){} };
-
-    // The actual plugin
-    $('.single-page-nav').singlePageNav({
-        offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        updateHash: true,
-        beforeStart: function() {
-            console.log('begin scrolling');
-        },
-        onComplete: function() {
-            console.log('done scrolling');
-        }
-    });
-</script>
-
-
-
-
 
 </body>
 <!-- Google Tag Manager -->

@@ -2,12 +2,16 @@
 <head>
   <title>What We Offer</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
   <script src="/static/js/index.js"></script>
 </head>
 
@@ -19,12 +23,25 @@
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
     <a class="bHeader__navItem"></a>
-    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
   </div>
 </div>
 <!--=====================
@@ -36,14 +53,14 @@
     <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__content" data-stellar-ratio="0.5">
-      <h1 class="bSplash__header">What <span class="font-w-bold">We Offer</span></h1>
+      <h1 class="bSplash__header">what <span class="font-w-bold">we offer</span></h1>
     </div>
   </section>
 
   <section class="bContent__section clearfix">
     <div class="container">
-      <h1 class="bContent__h">We offer highly-customizable meals based on your personal preferences and dietary needs.</h1>
-      <h2 class="bContent__h2 margin-v-3">Some diets I have experience cooking for:</h2>
+      <h1 class="bContent__h">highly-customizable meals</h1>
+      <h2 class="bContent__h2 margin-v-2">some diets I have experience cooking for:</h2>
 
       <div class="bContent__half">
         <li>the Selective Carbohydrate Diet</li>
@@ -81,7 +98,7 @@
 
   <section class="bContent__section bContent__section_alt">
     <div class="container">
-      <h1 class="bContent__h">Nutritional Consulting</h1>
+      <h1 class="bContent__h">nutritional consulting</h1>
       <p class="bContent__p">
         So, you've just been diagnosed with a health condition and you're totally overwhelmed. All the things you could eat before are off-limits. What do you do? You call us. Get a chef's perspective on how to navigate the grocery store, the kitchen, the farmer's market. We talk, we look through your kitchen. We shop for food.I leave you empowered, with a fridge full of food that's safe for you to eat.  And you'll even get a week of unlimited e-mail support after your consultation. You can even combine your consultation with cooking lessons, so that you feel ready to take on your new lifestyle head-on where it counts: the kitchen.
       </p>
@@ -90,40 +107,13 @@
 
   <section class="bContent__section">
     <div class="container">
-      <h1 class="bContent__h">Special Occasions and Requests</h1>
+      <h1 class="bContent__h">special occasions and requests</h1>
       <p class="bContent__p">
         We are able to take on a very limited number of special requests, but if you need an autoimmune-friendly holiday meal, paleo truffles for a significant other's birthday, or perhaps an allergy-free engagement dinner for just you and your honey... we might just be able to help you out. Don't hesitate; no request goes unconsidered!
       </p>
     </div>
   </section>
 </article>
-<!--==============================
-              footer
-=================================-->
-
-<a href="#" id="toTop" class="fa fa-chevron-up"></a>
-<script src="/static/js/jquery.singlePageNav.min.js"></script>
-<script>
-
-    // Prevent console.log from generating errors in IE for the purposes of the demo
-    if ( ! window.console ) console = { log: function(){} };
-
-    // The actual plugin
-    $('.single-page-nav').singlePageNav({
-        offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        updateHash: true,
-        beforeStart: function() {
-            console.log('begin scrolling');
-        },
-        onComplete: function() {
-            console.log('done scrolling');
-        }
-    });
-</script>
-
-
-
 
 
 </body>

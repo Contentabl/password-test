@@ -1,13 +1,17 @@
 <html lang="en">
 <head>
-  <title>Our Story</title>
+  <title>Account Info</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
   <script src="/static/js/profile.js"></script>
 </head>
 
@@ -15,18 +19,24 @@
 <!--==============================
               header
 =================================-->
+
 <div class="bHeader opaq">
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
-    <!-- <a class="bHeader__navItem opaq uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem opaq uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem opaq uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem opaq uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem opaq uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem opaq uppercase" href="/users/auth">get started</a> -->
-    <a class="bHeader__navItem opaq uppercase logoutbtn" onclick="logout();" href="#" data-type="reset">logout</a>
-    <a class="bHeader__navItem opaq uppercase topOrderButton" onclick="topOrderClicked();" href="#">orders</a>
-    <a class="bHeader__navItem opaq uppercase profileButton" onclick="profileClicked();" href="#">settings</a>
+    <a class="bHeader__navItem opaq profileButton" onclick="profileClicked();" href="#">settings</a>
+    <a class="bHeader__navItem opaq topOrderButton" onclick="topOrderClicked();" href="#">orders</a>
+    <a class="bHeader__navItem opaq logoutbtn" onclick="logout();" href="#" data-type="reset">logout</a>
+  </div>
+  <a class="bHeader__navItem-hamburger opaq" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<!-- TODO: close mobile nav when link clicked. [route doesn't change] -->
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile profileButton" onclick="profileClicked();" href="#">settings</a></br>
+    <a class="bHeader__navItem-mobile topOrderButton" onclick="topOrderClicked();" href="#">orders</a></br>
+    <a class="bHeader__navItem-mobile logoutbtn" onclick="logout();" href="#" data-type="reset">logout</a></br>
   </div>
 </div>
 <!--=====================
@@ -40,7 +50,7 @@
     <form id="contact-form">
       <fieldset>
         <div class="pProfile__info">
-          <h1 class="bContent__h2">Your Profile</h1>
+          <h2 class="bContent__h2">Your Profile</h2>
           <label class="name">
               <input type="text" name="name" class="nameBox bContent__input-dashboard" data-constraints="@Required @JustLetters">
               <span class="empty-message">*This field is required.</span>
@@ -87,33 +97,207 @@
         </div>
 
         <div class="pProfile__diets">
-          <h1 class="bContent__h2">Your Diets</h1>
+          <h2 class="bContent__h2">Your Diets</h2>
 
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Paleo" value="Paleo"> Paleo<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Whole 30" value="Whole30"> Whole 30<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Weston" value="Weston"> Weston<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="GAPS" value="GAPS"> GAPS<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Primal" value="Primal"> Primal<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="LowNo" value="LowNo"> Low-No FODMAPs<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="AutoimmunePaleo" value="AutoimmunePaleo"> Autoimmune Paleo<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="WahlsProtocol" value="WahlsProtocol"> Wahls Protocol<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Ketogenic" value="Ketogenic"> Ketogenic<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="21DaySugarDetox" value="21DaySugarDetox"> 21 Day Sugar Detox<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="GlutenFree" value="GlutenFree"> Gluten-Free<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="DairyFree" value="DairyFree"> Dairy Free<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="AllergyFree" value="AllergyFree"> Allergy-Free (Top 8)*<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Vegan" value="Vegan"> Vegan<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Vegetarian" value="Vegetarian"> Vegetarian<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="DukanDiet" value="DukanDiet"> Dukan Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="AtkinsDiet" value="AtkinsDiet"> Atkins Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="SpecificCarbohydrateDiet" value="SpecificCarbohydrateDiet"> Specific Carbohydrate Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="AlkalineDiet" value="AlkalineDiet"> Alkaline Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="CleanEating" value="CleanEating"> Clean Eating<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="SIBODiet" value="SIBODiet"> SIBO Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="SlowCarb" value="SlowCarb"> Slow Carb/4 Hr Body Diet<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="LowGlycemic" value="LowGlycemic"> Low-Glycemic<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="SalicylateFree" value="SalicylateFree"> Salicylate-Free<br>
-          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="weightLoss" value="weightLoss"> Weight Loss
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Paleo" value="Paleo">
+            <a href="#" class="tooltip">
+              Paleo
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                A whole foods diet, comprised of clean meats, organic fruits &amp; vegetables, pastured eggs &amp; some nuts and seeds.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                weight loss, general health management
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Whole30" value="Whole30">
+            <a href="#" class="tooltip">
+              Whole 30
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                Jump start your weight loss with this 30 day program based on Paleo principles.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                dietary restart, weight loss
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Weston" value="Weston">
+            <a href="#" class="tooltip">
+              Weston Price / Nourishing Traditions
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                Traditional, nutrient-dense foods like ferments, offal & sprouted grains comprise this diet. Lots of vegetables and fruits as well as raw milk products, grass-fed meats & pastured eggs.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                families, health maintenance, general diet
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="GAPS" value="GAPS">
+            <a href="#" class="tooltip">
+              GAPS
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                Created to fix what's known as "leaky gut", this multi-phase diet is lauded for its healing effects on autoimmune and digestive diseases. The GAPS diet has anecdotal accounts of reversing food allergies, healing the lining of the gut and easing the symptoms of severe gastrointestinal issues. Not for the faint of heart, this diet requires a strong commitment and patience.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                seriously damaged guts, those who are seeking to alleviate leaky gut issues
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Primal" value="Primal">
+            <a href="#" class="tooltip">
+              Primal
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                Based on Paleo concepts, Primal includes raw or grassfed organic dairy.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                weight loss, general health management
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="LowNo" value="LowNo">
+            <a href="#" class="tooltip">
+              Low FODMAPs
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                Often used for management of Irritable Bowel Disorder. Low in a variety of carbohydrates proven to cause gastrointestinal discomfort, this is a great solution for managing a sensitive gut.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                intestinal-related disorders, IBD, Crohn's, Colitis
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="AutoimmunePaleo" value="AutoimmunePaleo">
+            <a href="#" class="tooltip">
+              Autoimmune Paleo
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                 A low-allergen approach to Paleo, with an initial phase of no seeds, nuts, eggs, and nightshades. If you have found a plateau in managing or healing your illness with Paleo, Autoimmune Paleo, or AIP, is a great place to start.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                controlling autoimmune disease-related flare-ups, autoimmune disease management, thyroid management, allergy-free weight loss
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="WahlsProtocol" value="WahlsProtocol">
+            <a href="#" class="tooltip">
+              Wahls Paleo
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                 An alternative, extremely nutrient-dense approach to autoimmune illness. This version of Paleo subtracts eggs, adds in fermented food &amp; offal, and 9 servings of fruits and vegetables per day.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                 autoimmune issues, especially but not limited to those affecting the joints, nerve and muscles, such as Rheumatoid Arthritis, Multiple Sclerosis, Neuropathy &amp; Fibromyalgia
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Ketogenic" value="Ketogenic">
+            <a href="#" class="tooltip">
+              Ketogenic / Bulletproof
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                 High fat, low carbohydrate, moderate protein. This diet employs the principles of Dave Asprey. This diet puts your body into a state in which fat is burned for energy, versus carbohydrates, resulting in fat loss.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                 weight loss
+              </span>
+            </a>
+          <br>
+
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="21DaySugarDetox" value="21DaySugarDetox">
+            <a href="#" class="tooltip">
+              21 Day Sugar Detox
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                  A three a week program designed to conquer sugar addiction. Based on Paleo principles, but overall sugar intake--including those from fruits and vegetables.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                 weight loss, those aiming to cut sugar issues
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="GlutenFree" value="GlutenFree">
+            <a href="#" class="tooltip">
+              Gluten-Free
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                  This diet includes a variety of foods, but is free of all grains containing gluten.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                 Celiac disease, Crohn's disease
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Vegan" value="Vegan">
+            <a href="#" class="tooltip">
+              Vegan
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                  No animal products whatsoever-- just fruits, vegetables, nuts, legumes & grains.
+                <hr>
+                <!-- <strong class="font-w-bold">Recommended for: </strong></br>
+                 Celiac disease, Crohn's disease -->
+              </span>
+            </a>
+          <br>
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="Vegetarian" value="Vegetarian">
+            <a href="#" class="tooltip">
+              Vegetarian
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                  No meat, but eggs and dairy are permissible. Besides eggs and dairy, this diet is comprised of fruits, vegetables, nuts, legumes & grains.
+                <hr>
+                <!-- <strong class="font-w-bold">Recommended for: </strong></br>
+                 Celiac disease, Crohn's disease -->
+              </span>
+            </a>
+          <br>
+
+
+          <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="SpecificCarbohydrateDiet" value="SpecificCarbohydrateDiet">
+            <a href="#" class="tooltip">
+              Specific Carbohydrate Diet
+              <span>
+              <!-- <img class="callout" src="cssttp/callout.gif" /> -->
+                <strong class="font-w-bold">The diet:</strong></br>
+                  A relatively restrictive diet for people with gastrointestinal disease. Low in specific naturally-occuring carbohydrates, this diet is good for those managing digestive issues, but requires a level of commitment.
+                <hr>
+                <strong class="font-w-bold">Recommended for: </strong></br>
+                 Celiac disease, Crohn's disease, ulcerative colitis, diverticulitis
+              </span>
+            </a>
+          <br>
+
+          <!-- <input type="checkbox" style="-webkit-appearance:checkbox" name="option1" class="CleanEating" value="CleanEating"> Clean Eating<br> -->
 
           <a href="#" onclick="updateProfile();" class="btn pProfile__update" data-type="reset">Update </a>
         </div>
@@ -347,37 +531,12 @@
 
 
 
-    <!--==============================
-                  footer
-    =================================-->
-
-
-    <a href="#" id="toTop" class="fa fa-chevron-up"></a>
-    <script src="/static/js/jquery.singlePageNav.min.js"></script>
-    <script>
-
-        // Prevent console.log from generating errors in IE for the purposes of the demo
-        if ( ! window.console ) console = { log: function(){} };
-
-        // The actual plugin
-        $('.single-page-nav').singlePageNav({
-            offset: $('.single-page-nav').outerHeight(),
-            filter: ':not(.external)',
-            updateHash: true,
-            beforeStart: function() {
-                console.log('begin scrolling');
-            },
-            onComplete: function() {
-                console.log('done scrolling');
-            }
-        });
-    </script>
 
 
 
 
 
-</font></font></body>
+</body>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K269DB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

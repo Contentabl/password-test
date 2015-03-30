@@ -2,11 +2,14 @@
 <head>
   <title>Home</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bHeader.js"></script>
 </head>
 
 <body>
@@ -17,12 +20,25 @@
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
     <a class="bHeader__navItem"></a>
-    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
   </div>
 </div>
 <!--=====================
@@ -36,36 +52,11 @@
       <h1 class="bSplash__header">meals <span class="font-w-bold">to heal</span></h1>
       <h2 class="bSplash__subheader">a <span class="font-w-bold">brooklyn-based</span> food company.</h2>
       <a href="/users/auth">
-        <button class="btn_pill btn_white">Get started</button>
+        <button class="btn">get started</button>
       </a>
     </div>
   </section>
 </article>
-<!--==============================
-              footer
-=================================-->
-
-<a href="#" id="toTop" class="fa fa-chevron-up"></a>
-<script src="/static/js/jquery.singlePageNav.min.js"></script>
-<script>
-
-    // Prevent console.log from generating errors in IE for the purposes of the demo
-    if ( ! window.console ) console = { log: function(){} };
-
-    // The actual plugin
-    $('.single-page-nav').singlePageNav({
-        offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        updateHash: true,
-        beforeStart: function() {
-            console.log('begin scrolling');
-        },
-        onComplete: function() {
-            console.log('done scrolling');
-        }
-    });
-</script>
-
 
 
 

@@ -2,12 +2,16 @@
 <head>
   <title>Our Story</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
   <script src="/static/js/index.js"></script>
 </head>
 
@@ -18,12 +22,26 @@
 <div class="bHeader">
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
-    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+    <a class="bHeader__navItem"></a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
   </div>
 </div>
 <!--=====================
@@ -41,7 +59,7 @@
 
   <section class="bContent__section">
     <div class="container">
-      <h1 class="bContent__h">My story</h1>
+      <h1 class="bContent__h">my story</h1>
       <p class="bContent__p">
         If you had told me two years ago that I was making myself sick with what I was eating, I would laugh. I'd stuff my face with pizza, and I'd laugh at you. Now? Now, it's a much different story. I'm helping people all over New York feel amazing by changing what they eat.  But it's not just my undying love of agriculture, science, and gourmet pursuits that forms my personal philosophy. I've been managing my autoimmune issues with food for many years now, and I believe you can too.
       </p>
@@ -86,7 +104,7 @@
 
   <section class="bContent__section bContent__section_alt">
     <div class="container">
-      <h1 class="bContent__h">We get it.</h1>
+      <h1 class="bContent__h">we get it</h1>
       <p class="bContent__p">
         This is why we do what we do. And that's why we make nutrient-dense, farm-to-table, customized-to-need fare for New Yorkers across the city.
       </p>

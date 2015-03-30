@@ -1,3 +1,26 @@
+@font-face { font-family: Playball; src: url('../fonts/Playball.ttf'); }
+@font-face { font-family: Mission; src: url('../fonts/Mission-Script.otf'); }
+
+a.tooltip {outline:none; text-decoration: none; color: #000;}
+a.tooltip strong {line-height:30px;}
+a.tooltip:hover {text-decoration:none;}
+a.tooltip span {
+    z-index:10;display:none; padding:14px 20px;
+    margin-top:-30px; margin-left:28px;
+    width:300px; line-height:16px;
+}
+a.tooltip:hover span{
+    display:inline; position:absolute; color:#111;
+    border:1px solid #DCA; background:#fffAF0;}
+.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
+
+/*CSS3 extras*/
+a.tooltip span
+{
+    border-radius:4px;
+    box-shadow: 5px 5px 8px #CCC;
+}
+
 html {
   font-family: "Helvetica Neue";
   font-weight: 300;
@@ -52,73 +75,50 @@ html {
 }
 
 .bContent__h {
-  font-size: 36px;
+  font-size: 2.5rem;
+  font-family: "Mission";
+  margin-bottom: 1rem;
 }
 
 .bContent__h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .bContent__p {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 2rem 0;
-  line-height: 1.5
+  line-height: 2.0;
+  font-family: "Lora";
 }
 
-.bHeader {
-  height: 60px;
-  background: transparent;
-  color: #fff;
-  font-family: "Helvetica Neue";
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  transition: background-color, 0.5s ease;
+@media (max-width: 768px) {
+  .bContent__h {
+    font-size: 1.75rem
+  }
+  .bContent__h2 {
+    font-size: 1.25rem;
+  }
+  .bContent__p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  .bContent__section {
+    padding: 2rem 0;
+  }
 }
 
-.bHeader.opaq {
-  background: rgba(255,255,255,0.95);
-  color: #000;
-  border-bottom: 2px solid #7f7f7f;
-}
-
-.bHeader__logo {
-  background-image: url(../images/logo.png);
-  background-size: cover;
-  height: 32px;
-  width: 164px;
-  float: left;
-  margin: 16px 0;
-}
-
-.bHeader__navItem {
-  float: right;
-  text-decoration: none;
-  color: #fff;
-  text-transform: uppercase;
-  margin-left: 2rem;
-  line-height: 58px;
-}
-
-.bHeader__navItem:hover {
-  border-bottom: 2px solid #fff;
-}
-
-.bHeader__navItem.opaq {
-  color: #000;
-}
-
-.bHeader__navItem.opaq:hover {
-  border-bottom: 2px solid #000;
+@media (max-width: 480px) {
+  .bContent__p {
+    /*text-align: justify;*/
+  }
 }
 
 .pIndex .bSplash__background {
-  background-image: url(../../static/images/8.jpg);
+  background-image: url(../../static/images/12.jpg);
 }
 
 .pSources .bSplash__background {
-  background-image: url(../../static/images/7.jpg);
+  background-image: url(../../static/images/11.jpg);
 }
 
 .pAbout .bSplash__background {
@@ -126,7 +126,7 @@ html {
 }
 
 .pService .bSplash__background {
-  background-image: url(../../static/images/6.jpg);
+  background-image: url(../../static/images/10.jpg);
 }
 
 .pLogin .bSplash__background {
@@ -138,7 +138,7 @@ html {
 }
 
 .pContact .bSplash__background {
-  background-image: url(http://newyorknatives.com/wp-content/uploads/2013/07/Williamsburg-bridge.jpg);
+  background-image: url(../../static/images/9.jpg);
 }
 
 .bSplash {
@@ -150,6 +150,7 @@ html {
   height: 100%;
   width: 100%;
   background-size: cover;
+  /*background-position: center center;*/
 }
 
 .bSplash__content {
@@ -160,8 +161,12 @@ html {
   color: white;
   font-weight: 100;
   letter-spacing: 12.0;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   z-index: 666;
+}
+
+.bSplash__content-login {
+  top: 5rem;
 }
 
 .bSplash__overlay {
@@ -174,12 +179,24 @@ html {
 }
 
 .bSplash__header {
-  font-size: 83px;
+  font-size: 5rem;
 }
 
 .bSplash__subheader {
-  font-size: 28px;
+  font-size: 3rem;
   margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .bSplash__background {
+    background-position: center center;
+  }
+  .bSplash__header {
+    font-size: 2rem;
+  }
+  .bSplash__subheader {
+    font-size: 1rem;
+  }
 }
 
 .pIndex__aboutP {
@@ -188,40 +205,19 @@ html {
 }
 
 .pMenu__item {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
-.btn_pill {
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 100;
-  text-transform: uppercase;
-  font-size: 1em;
-  line-height: 1em;
-  letter-spacing: 0.1em;
-  padding: .8em 2.4em .6em;
-  border-radius: 10em;
-  background: transparent;
-  outline: none;
-  transition: background, 0.5s ease;
-}
-
-.btn_white {
+.btn {
+  font-family: "Helvetica Neue";
+  font-size: 1rem;
   color: #FFF;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-}
-
-.btn_white:hover {
-  background: #fff;
-  color: #1a9ff2;
-}
-
-.btn_blue {
-  color: #fff;
-  background-color: #1A9FF2;
-  border: 1px solid #1A9FF2;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #FFF;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  outline: none;
+  cursor: pointer;
 }
 
 .bContent__half {
@@ -229,14 +225,19 @@ html {
   float: left;
 }
 
+@media (max-width: 768px) {
+  .bContent__half {
+    width: 100%;
+  }
+}
+
 .bContent__half li {
-  margin: 1rem 0;
-  font-size: 21px;
+  margin: 0.5rem 0;
+  font-family: "Lora";
 }
 
 .bContent__input {
   font-size: 16px;
-  /*line-height: 6rem;*/
   -webkit-transition: border-color 0.3s, color 0.3s;
   -moz-transition: border-color 0.3s, color 0.3s;
   transition: border-color 0.3s, color 0.3s;
@@ -245,52 +246,39 @@ html {
   color: #000;
   background: #fff;
   float: left;
-  /*height: 8rem;*/
   outline: none;
-  padding: 1rem;
+  padding: 0.75rem;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .bContent__input-dashboard {
-  font-size: 16px;
-  width: 300px;
-  /*line-height: 6rem;*/
   -webkit-transition: border-color 0.3s, color 0.3s;
   -moz-transition: border-color 0.3s, color 0.3s;
   transition: border-color 0.3s, color 0.3s;
   border-radius: 0.66667rem;
   border: 2px solid #000;
   color: #000;
-  /*background: rgba(192,192,192,0.5);*/
-  /*float: left;*/
-  /*height: 8rem;*/
   outline: none;
   padding: 1rem;
-  /*width: 100%;*/
   margin: 1rem 0;
   display: block;
+  width: 250px;
 }
 
 .bContent__textarea {
-  font-size: 16px;
-  height: 300px;
-  width: 300px;
-  /*line-height: 6rem;*/
+  height: 200px;
   -webkit-transition: border-color 0.3s, color 0.3s;
   -moz-transition: border-color 0.3s, color 0.3s;
   transition: border-color 0.3s, color 0.3s;
   border-radius: 0.66667rem;
   border: 2px solid #000;
   color: #000;
-  /*background: rgba(192,192,192,0.5);*/
-  /*float: left;*/
-  /*height: 8rem;*/
   outline: none;
   padding: 1rem;
-  /*width: 100%;*/
   margin: 1rem 0;
   display: block;
+  width: 250px;
 }
 
 .margin-v-1 {
@@ -329,7 +317,7 @@ html {
 
 .pProfile__info {
   float: left;
-  width: 300px;
+  width: 250px;
 }
 
 .pProfile__diets {
@@ -380,6 +368,12 @@ html {
   margin-left: 0;
 }
 
+@media (max-width: 768px) {
+  .pProfile__diets {
+    margin: 0;
+  }
+}
+
 /* Contact Form Error messages
 ========================================================*/
 #contact-form .empty-message,
@@ -398,4 +392,12 @@ html {
 #contact-form .invalid .error-message,
 #contact-form .empty .empty-message {
   height: 20px;
+}
+
+.loginButton, .signupButton {
+  width: 45%;
+}
+
+.submitButton {
+  width: 100%;
 }

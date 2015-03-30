@@ -2,12 +2,16 @@
 <head>
   <title>Our Story</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
  <!--  <link rel="stylesheet" href="/static/css/skeleton.css"> -->
+  <link rel="stylesheet" href="/static/css/bHeader.css">
   <link rel="stylesheet" href="/static/css/new.css">
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/stellar.js"></script>
+  <script src="/static/js/bHeader.js"></script>
   <script src="/static/js/index.js"></script>
 </head>
 
@@ -19,12 +23,25 @@
   <div class="container">
     <a class="bHeader__logo" href="/"></a>
     <a class="bHeader__navItem"></a>
-    <a class="bHeader__navItem uppercase" href="/users/service">what we offer</a>
-    <a class="bHeader__navItem uppercase" href="/users/menu">menu</a>
-    <a class="bHeader__navItem uppercase" href="/users/sources">sources</a>
-    <a class="bHeader__navItem uppercase" href="/users/about">our story</a>
-    <a class="bHeader__navItem uppercase" href="/users/contact">contact us</a>
-    <a class="bHeader__navItem uppercase" href="/users/auth">get started</a>
+    <a class="bHeader__navItem" href="/users/service">services</a>
+    <a class="bHeader__navItem" href="/users/menu">menu</a>
+    <a class="bHeader__navItem" href="/users/sources">sources</a>
+    <a class="bHeader__navItem" href="/users/about">our story</a>
+    <!-- <a class="bHeader__navItem" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem" href="/users/auth">get started</a>
+  </div>
+  <a class="bHeader__navItem-hamburger" href="#"><span class="fa fa-bars"></span></a>
+</div>
+
+<div class="bHeader__mobile" style="display:none;">
+  <a class="bHeader__navItem-close" href="#"><span class="fa fa-times"></span></a>
+  <div class="container">
+    <a class="bHeader__navItem-mobile" href="/users/service">services</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/menu">menu</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/sources">sources</a></br>
+    <a class="bHeader__navItem-mobile" href="/users/about">our story</a></br>
+    <!-- <a class="bHeader__navItem-mobile" href="/users/contact">contact us</a> -->
+    <a class="bHeader__navItem-mobile" href="/users/auth">get started</a>
   </div>
 </div>
 <!--=====================
@@ -35,7 +52,7 @@
     <div class="bSplash__background" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__overlay" data-stellar-background-ratio="0.3"></div>
     <div class="bSplash__content" data-stellar-ratio="0.5">
-      <h1 class="bSplash__header">Spring 2015 <span class="font-w-bold">Menu</span></h1>
+      <h1 class="bSplash__header">spring 2015 <span class="font-w-bold">menu</span></h1>
     </div>
   </section>
 
@@ -169,83 +186,6 @@
     </div>
   </section>
 </article>
-
-<!-- <section id="about" class="page page_bg__1" style="background-color:#000000">
-    <div class="about_bg__1" style="background-color:#000000">
-        <div class="container_12" style="background-color:#000000">
-            <div class="grid_12" style="background-color:#000000">
-                <h3 class="head__1" style="color:#FFFFFF; text-align:left; font-size:32px"></h3>
-                <strong><p style="font-size: 28px">breakfasts</p></strong>
-                <p class="text-align-center"><strong>morning napoleon</strong><br>
-                pastured eggs + kale + organic chicken sausage + seasonal vegetables with a reduction sauce</p>
-                <p class="text-align-center"><strong>sundae morning</strong><br>
-                     grassfed yogurt + cranberry compote+ housemade paleo granola </p>
-                <p class="text-align-center"><strong>egg muffins</strong><br>
-                         pastured eggs + chef's choice leafy greens &amp; seasonal vegetables </p>
-                <p class="text-align-center"><strong>squash pancakes&nbsp;</strong><br>
-                     coconut flour squash pancakes + roast pears + local maple + uncured, nitrate-free bacon </p>
-
-                <h3 class="head__1" style="color:#FFFFFF; text-align:left; font-size:32px"></h3>
-                <p style="font-size: 28px">lunches and dinners</p>
-                <p class="text-align-center"><strong>lamb burger</strong><br>
-                     hudson valley lamb + roasted micro radishes + winter spinach with caramelized golden beets </p>
-                <p class="text-align-center"><strong>the power meal</strong><br>
-                     grass-fed beef steak + carrot frites + steamed broccoli&nbsp; </p>
-                <p class="text-align-center"><strong>stuffed cabbage</strong><br>
-                     ground grass-fed beef + leeks + chef's choice of seasonal vegetables + beet sauce </p>
-                <p class="text-align-center"><strong>lamb salad</strong><br>
-                     seared hudson valley lamb + hand-selected baby greens+ beets + radishes + other seasonal vegetables </p>
-                <p class="text-align-center"><strong>beet-braised duck</strong><br>
-                     black dirt region beets + pastured duck leg + roasted squash rings + sauteed kale </p>
-                <p class="text-align-center"><strong>asian pork cheek ragout</strong><br>
-                     coconut amino braised heritage breed pork cheeks + sesame cucumber noodles + grilled bok choy </p>
-
-                <h3 class="head__1" style="color:#FFFFFF; text-align:left; font-size:32px"></h3>
-                <p style="font-size: 28px">snacks + desserts</p>
-                <p class="text-align-center"><strong>squash truffles</strong><br>
-                     roasted squash puree + coconut butter + power seeds + coconut </p>
-                <p class="text-align-center"><strong>sunflower smoothie</strong>
-                    <br>coconut milk + sunflower seed butter*</p>
-                <p class="text-align-center"><strong>nut-free paleonola</strong><br>
-                     seeds + coconut + seasonal fruits + more </p>
-                <p class="text-align-center"><strong>chopped liver</strong><br>
-                     organic, pastured chicken liver + hard-boiled eggs + garden herbs + carrot &amp; kohlrabi sticks </p>
-                <p class="text-align-center"><strong>frozen lavender custard</strong><br>
-                     coconut milk + local lavender&nbsp; </p>
-                <p class="text-align-center"><strong>butternut baba ghanoush</strong><br>
-                     butternut squash + zucchini + tahini + radish chips </p><p class="text-align-center">&nbsp;</p>
-                <p class="text-align-center">&nbsp;</p>
-                <p class="text-align-center">our menus are subject to change due to seasonality, availability and your personal needs.</p><p class="text-align-center">*can be personalized with additions or omissions</p><p class="text-align-center">&nbsp;</p>
-                <p class="text-align-center">&nbsp;</p><p>&nbsp;</p><p class="text-align-center"><br><br>&nbsp;</p>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</section> -->
-<!--==============================
-              footer
-=================================-->
-
-<a href="#" id="toTop" class="fa fa-chevron-up"></a>
-<script src="/static/js/jquery.singlePageNav.min.js"></script>
-<script>
-
-    // Prevent console.log from generating errors in IE for the purposes of the demo
-    if ( ! window.console ) console = { log: function(){} };
-
-    // The actual plugin
-    $('.single-page-nav').singlePageNav({
-        offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        updateHash: true,
-        beforeStart: function() {
-            console.log('begin scrolling');
-        },
-        onComplete: function() {
-            console.log('done scrolling');
-        }
-    });
-</script>
 
 
 
