@@ -1,0 +1,53 @@
+# Access Review
+
+The **Access Review** page lets you manage access violations. These violations are based on the access policies. Read more about the policies here (link to access-review-policies snippet).
+
+To navigate to the **Access Review** page when you are in another area of Cycode, click ![access review icon -icon](assets/images/access-review.png).
+
+The  **Access Review** page appears similar to the following:
+
+![Access Review page -full](assets/images/access-review-page.png)
+
+The left pane lists all the policies associated with access review. Click on a policy to view the associated violations in the right pane.
+
+Read more about the polices in the **Policies** section. (LINK TO POLICIES)
+
+The following table describes the columns from the **Detected Violations** pane:
+
+### Detected violations
+
+| Column name | Description | Policy appearance |
+| --- | --- | --- |
+| Date | The date each violation is detected. | Appears in all policies.|
+| User | The user who is in violation of the policy. | Appears in all policies associated with a user. |
+| Team | The team that is in violation of the policy | Appears in all policies associated with a team. |
+| Repository | The repository that contains the violation. | Appears in all policies associated with a repository. |
+| Organization | The organization that contains the violation. | Appears in all policies associated with an organization. |
+| Assignee | The person assigned to each detected violation. | Appears in all policies. |
+| Status | The status of each detected violation. Can be **Open**, **Resolved**, or **Dismissed**. | Appears in all policies. |
+| Permission | The excess permissions given to a user in an organization. | Only appears in **Excess base permissions**. |
+
+To the left of each detected violation there is a checkbox ![checkbox -icon](assets/images/checkbox.png). 
+
+Check the box to resolve, dismiss, or reopen the violation. If you have integrated Jira (see Jira integration !!! ADD LINK), you can create an issue in Jira.
+
+To the right of each detected violation there is a horizontal ellipsis button ![ellipsis button -icon](assets/images/three-dot-button.png). Click this button to resolve, dismiss, reopen, or see more details about each detected violation.
+
+Click anywhere in the row of a detected violation to view more details about the violation. 
+
+A window opens that appears similar to the following:
+
+![Access Review details -full](assets/images/access-review-details.png)
+
+The parts of the window are as follows: 
+1. More details about the detected violation
+
+2. Options to change the status of the detected violation; valid values include **Resolve**, **Dismiss**, or **Reopen** the violation. If you have integrated Jira (see Jira integration !!! add link), you can create an issue in Jira per violation.
+
+3. Option to change the person assigned to this violation
+
+4. Alert information, such as the severity and source of the violation
+
+5. Activity log for the violation; any actions taken to fix the violation are shown in the activity log
+
+6. Comments on the detected violation; any user with access to this page can leave a comment. 
